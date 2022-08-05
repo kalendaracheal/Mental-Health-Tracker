@@ -1,6 +1,7 @@
+// ignore_for_file: constant_identifier_names, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:mentalhealthtracker/Screens/Congratulations.dart';
-import 'package:mentalhealthtracker/Screens/Journal.dart';
 
 enum SingingCharacter { not_difficult_all, somewhat_difficult, very_difficult , extremely_difficult }
 
@@ -19,9 +20,6 @@ class _Question11State extends State<Question11> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        title: Text('Mental Health Tracker'),
-      ),
       body: Center(
 
           child: Column(
@@ -32,21 +30,21 @@ class _Question11State extends State<Question11> {
 
                 child: Column(
                   children: [
-
+                    const SizedBox(height: 20,),
                     Text('Question 10',
                       style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue[700] ),),
 
-                    SizedBox(height: 20,),
-                    CircleAvatar(
+                    const SizedBox(height: 10,),
+                    const CircleAvatar(
                       radius: 40,
                       backgroundImage: AssetImage('/images/mht.png'),
                     ),
-                    SizedBox(height: 20,),
-                    Text('If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?  ',
+                    const SizedBox(height: 10,),
+                    const Text('If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?  ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black87
                         )),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 10,),
 
                   ],
                 ),
@@ -120,6 +118,7 @@ class _Question11State extends State<Question11> {
               context,
               MaterialPageRoute(builder: (context) => const Congratulations()),
             );
+
           },
           child: const Text("Next")
       ),

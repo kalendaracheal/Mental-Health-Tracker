@@ -1,5 +1,6 @@
+// ignore_for_file: file_names, constant_identifier_names, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
-import 'package:mentalhealthtracker/Screens/Journal.dart';
 import 'package:mentalhealthtracker/Screens/Question3.dart';
 enum SingingCharacter { not_at_all, several_days, more_than_half_the_days, nearly_everyday}
 
@@ -17,10 +18,7 @@ class _Question2State extends State<Question2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        title: Text('Mental Health Tracker'),
-      ),
+      backgroundColor: Color(0xFFE3F2FD),
       body: Center(
 
           child: Column(
@@ -31,28 +29,28 @@ class _Question2State extends State<Question2> {
 
                 child: Column(
                   children: [
-
+                    const SizedBox(height: 20,),
                     Text('Question 1',
                       style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue[700] ),),
 
-                    SizedBox(height: 20,),
-                    CircleAvatar(
+                    const SizedBox(height: 10,),
+                    const CircleAvatar(
                       radius: 40,
                       backgroundImage: AssetImage('/images/mht.png'),
                     ),
-                    SizedBox(height: 20,),
-                    Text('Over the last 2 weeks, how often have you been bothered by any of the following problems? ',
+                    const SizedBox(height: 10,),
+                    const Text('Over the last 2 weeks, how often have you been bothered by any of the following problems? ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black87
                         )),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 10,),
 
                   ],
                 ),
               ),
              Padding(padding: const EdgeInsets.only(left: 80, right: 80, top: 10),
              child: Column(
-               children: [
+               children: const [
                  Text('1. Little interest or pleasure in doing things ',
                  style: TextStyle(
                      fontSize: 17.0

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mentalhealthtracker/Screens/Journal.dart';
 import 'package:mentalhealthtracker/Screens/Question1.dart';
+import 'package:mentalhealthtracker/Screens/Welcome.dart';
 
 
 
@@ -17,8 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mental Health Tracker',
       theme: ThemeData(
-
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.cyan,
       ),
       home: const MyHomePage(title: 'Mental Health Tracker'),
     );
@@ -35,17 +36,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController _usernameController = TextEditingController();
-TextEditingController _passwordController = TextEditingController( );
+  final TextEditingController _usernameController = TextEditingController();
+final TextEditingController _passwordController = TextEditingController( );
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Color(0xFFBBDEFB),
         appBar: AppBar(
+
           title: Text(widget.title),
+
         ),
+
         body: Container(
           decoration: const BoxDecoration(
               image: DecorationImage(
@@ -70,8 +74,7 @@ TextEditingController _passwordController = TextEditingController( );
                           style:  TextStyle( fontSize: 16)
                       ),
                       const SizedBox(height: 20),
-                      const Text('Hello World'),
-                      const SizedBox(height: 20),
+
                       const Padding(padding: EdgeInsets.all(20.0),
                       ),
                       TextFormField(
@@ -116,11 +119,10 @@ TextEditingController _passwordController = TextEditingController( );
                       const SizedBox(height: 20),
                       ElevatedButton(
                           onPressed: () {
-                            print('Username' + _usernameController.text);
-                            print('Password' + _passwordController.text);
+                            
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const Question1()),
+                              MaterialPageRoute(builder: (context) => const Welcome()),
                             );
                           },
                           child: const Text("Login")

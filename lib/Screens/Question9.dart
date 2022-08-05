@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, file_names, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:mentalhealthtracker/Screens/Question10.dart';
 
@@ -17,9 +19,6 @@ class _Question9State extends State<Question9> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        title: Text('Mental Health Tracker'),
-      ),
       body: Center(
 
           child: Column(
@@ -30,28 +29,28 @@ class _Question9State extends State<Question9> {
 
                 child: Column(
                   children: [
-
+                    const SizedBox(height: 20,),
                     Text('Question 8',
                       style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue[700] ),),
 
-                    SizedBox(height: 20,),
-                    CircleAvatar(
+                    const SizedBox(height: 15,),
+                    const CircleAvatar(
                       radius: 40,
                       backgroundImage: AssetImage('/images/mht.png'),
                     ),
-                    SizedBox(height: 20,),
-                    Text('Over the last 2 weeks, how often have you been bothered by any of the following problems? ',
+                    const SizedBox(height: 15,),
+                    const Text('Over the last 2 weeks, how often have you been bothered by any of the following problems? ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black87
                         )),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 15,),
 
                   ],
                 ),
               ),
               Padding(padding: const EdgeInsets.only(left: 80, right: 80, top: 10),
                   child: Column(
-                    children: [
+                    children: const [
                       Text('8. Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual   ',
                         style: TextStyle(
                             fontSize: 17.0

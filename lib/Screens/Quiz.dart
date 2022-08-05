@@ -1,92 +1,69 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:mentalhealthtracker/Screens/Question2.dart';
+import 'package:mentalhealthtracker/Screens/Congratulations.dart';
+import 'package:mentalhealthtracker/Screens/Home.dart';
+import 'package:mentalhealthtracker/Screens/Journal.dart';
+import 'package:mentalhealthtracker/Screens/Question1.dart';
 
-import 'Congratulations.dart';
-import 'Home.dart';
-import 'Quiz.dart';
+class Quiz extends StatefulWidget {
 
-class Journal extends StatefulWidget {
-  const Journal({Key? key}) : super(key: key);
+  const Quiz({Key? key}) : super(key: key);
 
   @override
-  State<Journal> createState() => _JournalState();
+  State<Quiz> createState() => _QuizState();
 }
 
-class _JournalState extends State<Journal> {
-   int _selectedIndex = 2;
+class _QuizState extends State<Quiz> {
+  int _selectedIndex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        title: const Text('Journal'),
-      ),
-      body: Container(
-          // decoration: const BoxDecoration(
-          //     // image: DecorationImage(
-          //     //     image: AssetImage('/images/bg.png'),
-          //     //     fit: BoxFit.cover
-          //     // )
-          // ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 100, right: 100, top: 40),
+      body: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 20,),
+              Padding(padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: const [
+                      SizedBox(height: 10,),
+                      Text('Mental Health Tracker',
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26)
+                      ),
+                      SizedBox(height: 40,),
+                      Text('Welcome Back',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black54),),
+                      SizedBox(height: 30,),
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundImage: AssetImage('/images/mht.png'),
+                      ),
+                      SizedBox(height: 20,),
+                      Text('Hey Samson, Do you want to check in today?',
+                        style: TextStyle( fontSize: 17.0),),
 
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-
-                const Text('Welcome Back',
-                    style: TextStyle( fontSize: 16, color: Colors.white60)),
-                const SizedBox(height: 10,),
-                const Text('Daily Journal',
-                  style: TextStyle( fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white ),),
-
-                //  Image.asset('assets/images/mht.png'),
-                const SizedBox(height: 10,),
-                const CircleAvatar(
-                  radius: 40,
-                  backgroundImage: AssetImage('/images/mht.png'),
-                ),
-                const SizedBox(height: 20,),
-                const Text('Enter Passcode to proceed',
-                    style: TextStyle( fontSize: 16,  color: Colors.white70)),
-
-                const SizedBox(height: 40,),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'Enter your passcode',
-
-                    border: OutlineInputBorder(),
+                    ],
+                  )
 
 
-                  ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    return null;
-                  },
-                ),
+              ),
 
 
-              ],
-            ),
+            ],
           )
 
 
       ),
-      floatingActionButton:  ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Question2()),
-            );
-          },
-          child: const Text("Continue")
-      ),
+        floatingActionButton:  ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Question1()),
+              );
+            },
+            child: const Text("Start Now")
+        ),
         bottomNavigationBar: Container(
           //color: Color(0xFFB2EBF2),
           color: Colors.cyan.shade200,
@@ -161,7 +138,6 @@ class _JournalState extends State<Journal> {
                 ]),
           ),
         )
-
     );
   }
 }

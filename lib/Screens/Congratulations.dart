@@ -1,5 +1,9 @@
+// ignore: file_names
+// ignore_for_file: file_names
+
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
+import 'package:mentalhealthtracker/Screens/Journal.dart';
 
 class Congratulations extends StatefulWidget {
   const Congratulations({Key? key}) : super(key: key);
@@ -10,12 +14,14 @@ class Congratulations extends StatefulWidget {
 
 class _CongratulationsState extends State<Congratulations> {
   final myController =  ConfettiController();
+
   bool is_playing = false;
   @override
   void dispose(){
     super.dispose();
     myController.dispose();
   }
+  @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
@@ -23,28 +29,28 @@ class _CongratulationsState extends State<Congratulations> {
         Scaffold(
 
             appBar: AppBar(
-                title: Text('Mental Health Tracker'),
+                title: const Text('Mental Health Tracker'),
                         ),
-         // backgroundColor: Colors.pinkAccent[100],
+         // backgroundColor: Colors.purpleAccent[100],
           body: Center(
 
             child: Column(
               children: [
-                SizedBox(height: 40,),
+                const SizedBox(height: 40,),
                 Text('Congratulations',
                   style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue[700] ),),
 
-                SizedBox(height: 20,),
-                CircleAvatar(
+                const SizedBox(height: 20,),
+                const CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage('/images/mht.png'),
                 ),
-                SizedBox(height: 20,),
-                Text('You just finished your self assesment quiz now!!  ',
+                const SizedBox(height: 20,),
+                const Text('You just finished your self assesment quiz now!!  ',
                     style: TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black87
                     )),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 MaterialButton(
                             onPressed: (){
                               if(is_playing){
@@ -55,18 +61,28 @@ class _CongratulationsState extends State<Congratulations> {
                                 }
                          is_playing = !is_playing;
                         },
-                  child: Text('Done'),
                   color: Colors.deepPurpleAccent[100],
+                  child: const Text('Done'),
     ),
 
               ],
             ),
 
             ),
+          floatingActionButton:  ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Journal()),
+                );
+              },
+              child: const Text("Next")
+          ),
 
                     ),
         ConfettiWidget(
-            confettiController: myController
+            confettiController: myController,
+          blastDirectionality: BlastDirectionality.explosive,
         ),
                 ],
     );
