@@ -23,6 +23,7 @@ class _CongratulationsState extends State<Congratulations> {
   }
   @override
   Widget build(BuildContext context) {
+
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -78,7 +79,6 @@ class _CongratulationsState extends State<Congratulations> {
               },
               child: const Text("Next")
           ),
-
                     ),
         ConfettiWidget(
             confettiController: myController,
