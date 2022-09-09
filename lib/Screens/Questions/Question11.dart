@@ -1,18 +1,20 @@
-// ignore_for_file: constant_identifier_names, file_names, prefer_typing_uninitialized_variables
+// ignore_for_file: constant_identifier_names, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
-import 'package:mentalhealthtracker/Screens/Question10.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mentalhealthtracker/Screens/Congratulations.dart';
 
-enum SingingCharacter { not_at_all, several_days, more_than_half_the_days, nearly_everyday}
-class Question9 extends StatefulWidget {
-  const Question9({Key? key}) : super(key: key);
+enum SingingCharacter { not_difficult_all, somewhat_difficult, very_difficult , extremely_difficult }
+
+class Question11 extends StatefulWidget {
+  const Question11({Key? key}) : super(key: key);
 
   @override
-  State<Question9> createState() => _Question9State();
+  State<Question11> createState() => _Question11State();
 }
 
-class _Question9State extends State<Question9> {
-  SingingCharacter? _character = SingingCharacter.not_at_all;
+class _Question11State extends State<Question11> {
+  SingingCharacter? _character = SingingCharacter.not_difficult_all;
 
   var child;
   @override
@@ -30,44 +32,32 @@ class _Question9State extends State<Question9> {
                 child: Column(
                   children: [
                     const SizedBox(height: 20,),
-                    Text('Question 8',
+                    Text('Question 10',
                       style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold, color: Colors.blue[700] ),),
 
-                    const SizedBox(height: 15,),
+                    const SizedBox(height: 10,),
                     const CircleAvatar(
                       radius: 40,
                       backgroundImage: AssetImage('/images/mht.png'),
                     ),
-                    const SizedBox(height: 15,),
-                    const Text('Over the last 2 weeks, how often have you been bothered by any of the following problems? ',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black87
-                        )),
-                    const SizedBox(height: 15,),
+                    const SizedBox(height: 10,),
+                    Text('If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?  ',
+                        style: GoogleFonts.balsamiqSans(fontSize: 17.0, color: Colors.black87)),
+                    const SizedBox(height: 10,),
 
                   ],
                 ),
               ),
-              Padding(padding: const EdgeInsets.only(left: 80, right: 80, top: 10),
-                  child: Column(
-                    children: const [
-                      Text('8. Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual   ',
-                        style: TextStyle(
-                            fontSize: 17.0
-                        ),
-                      ),
-                    ],
-                  )
-              ),
+
 
               Padding(
                 padding: const EdgeInsets.only(left: 100, right: 20,top: 10),
                 child: Column(
                   children: [
                     ListTile(
-                      title: const Text('Not at all'),
+                      title: const Text('Not difficult at all '),
                       leading: Radio<SingingCharacter>(
-                        value: SingingCharacter.not_at_all,
+                        value: SingingCharacter.not_difficult_all,
                         groupValue: _character,
                         onChanged: (SingingCharacter? value) {
                           setState(() {
@@ -77,9 +67,9 @@ class _Question9State extends State<Question9> {
                       ),
                     ),
                     ListTile(
-                      title: const Text('Several days'),
+                      title: const Text('Somewhat difficult '),
                       leading: Radio<SingingCharacter>(
-                        value: SingingCharacter.several_days,
+                        value: SingingCharacter.somewhat_difficult,
                         groupValue: _character,
                         onChanged: (SingingCharacter? value) {
                           setState(() {
@@ -89,9 +79,9 @@ class _Question9State extends State<Question9> {
                       ),
                     ),
                     ListTile(
-                      title: const Text('More than half the days'),
+                      title: const Text('Very difficult'),
                       leading: Radio<SingingCharacter>(
-                        value: SingingCharacter.more_than_half_the_days,
+                        value: SingingCharacter.very_difficult,
                         groupValue: _character,
                         onChanged: (SingingCharacter? value) {
                           setState(() {
@@ -101,9 +91,9 @@ class _Question9State extends State<Question9> {
                       ),
                     ),
                     ListTile(
-                      title: const Text('Nearly Everyday'),
+                      title: const Text('Extremely difficult'),
                       leading: Radio<SingingCharacter>(
-                        value: SingingCharacter.nearly_everyday,
+                        value: SingingCharacter.extremely_difficult,
                         groupValue: _character,
                         onChanged: (SingingCharacter? value) {
                           setState(() {
@@ -125,8 +115,9 @@ class _Question9State extends State<Question9> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Question10()),
+              MaterialPageRoute(builder: (context) => const Congratulations()),
             );
+
           },
           child: const Text("Next")
       ),

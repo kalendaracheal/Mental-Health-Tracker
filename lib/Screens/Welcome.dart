@@ -25,42 +25,44 @@ class _WelcomeState extends State<Welcome> {
 
       body: Center(
 
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 20.0,),
-            SafeArea(
-              child: Text('Mental Health Tracker',
-                  style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 26)
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 15.0,),
+              SafeArea(
+                child: Text('Mental Health Tracker',
+                    style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 26)
+                ),
               ),
-            ),
-            const AvatarGlow(
-              endRadius: 180, glowColor: Colors.cyan,
-              duration: Duration(milliseconds: 3000),
-              repeatPauseDuration: Duration(milliseconds: 200),
-              child: CircleAvatar(
-                radius: 60,
-                backgroundImage: AssetImage('/images/mht.png'),
-              ),),
-            const SizedBox(height: 10.0,),
+              const AvatarGlow(
+                endRadius: 160, glowColor: Colors.cyan,
+                duration: Duration(milliseconds: 3000),
+                repeatPauseDuration: Duration(milliseconds: 200),
+                child: CircleAvatar(
+                  radius: 60,
+                  backgroundImage: AssetImage('/images/mht.png'),
+                ),),
+              const SizedBox(height: 10.0,),
 
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(120, 40),
-                primary: Colors.blue.shade400,
-                textStyle: GoogleFonts.balsamiqSans( fontSize: 16, color: Colors.black45),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(120, 40),
+                  primary: Colors.blue.shade400,
+                  textStyle: GoogleFonts.balsamiqSans( fontSize: 16, color: Colors.black45),
 
+                ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()
+                    ));
+                  },
+                  child: const Text("S  k  i  p")
               ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Home()),
-                  );
-                },
-                child: const Text("S  k  i  p")
-            ),
 
-          ],
+            ],
+          ),
         ),
 
 

@@ -2,23 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/Journal.dart';
 import 'package:mentalhealthtracker/Screens/Quiz.dart';
-import 'package:mentalhealthtracker/Screens/Welcome.dart';
-import 'Congratulations.dart';
+import 'package:mentalhealthtracker/page/videoplayer.dart';
+import 'Quotes_page.dart';
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  int selectedIndex;
+   Home({Key? key, this.selectedIndex = 0}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
-  final screens = [
+
+  List<Widget> screens = [
 
     const Quiz(),
-    const Welcome(),
+    const Quotes_page(),
     const Journal(),
-    const Congratulations()
+    const videoplayer(),
+      //const Tools()
+    // const Welcome(),
   ];
 
   @override
@@ -119,7 +122,7 @@ class _HomeState extends State<Home> {
       //     ],
       //   ),
 
-      body: screens[_selectedIndex],
+      body: screens[widget.selectedIndex],
 
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
@@ -131,28 +134,28 @@ class _HomeState extends State<Home> {
         ),
         child: NavigationBar(
           height: 60,
-          selectedIndex: _selectedIndex,
+          selectedIndex: widget.selectedIndex,
           backgroundColor: Colors.blue.shade100,
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-          onDestinationSelected: (_selectedIndex) =>
-              setState(() => this._selectedIndex = _selectedIndex),
-          destinations: [
-            const NavigationDestination(
+          onDestinationSelected: (selectedIndex) =>
+              setState(() => widget.selectedIndex = selectedIndex),
+          destinations: const [
+            NavigationDestination(
                 icon: Icon(Icons.home_outlined),
                 selectedIcon: Icon(Icons.home),
                 label: 'Home'
             ),
-            const NavigationDestination(
+            NavigationDestination(
                 icon: Icon(Icons.self_improvement_outlined),
                 selectedIcon: Icon(Icons.self_improvement_sharp, color: Colors.blue,),
                 label: 'Self care'
             ),
-            const NavigationDestination(
+            NavigationDestination(
                 icon: Icon(Icons.note_alt_outlined),
                 selectedIcon: Icon(Icons.note_alt),
                 label: 'Journal'
             ),
-            const NavigationDestination(
+            NavigationDestination(
                 icon: Icon(Icons.question_answer_sharp),
                 selectedIcon: Icon(Icons.question_answer),
                 label: 'Professional Help'

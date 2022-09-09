@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentalhealthtracker/Screens/Question1.dart';
+import 'package:mentalhealthtracker/Screens/Questions/Question1.dart';
 
 class Quiz extends StatefulWidget {
 
@@ -35,7 +35,7 @@ backgroundColor:  const Color(0xFFE1F5FE),
                       const SizedBox(height: 30,),
                       const CircleAvatar(
                         radius: 40,
-                        backgroundImage: const AssetImage('/images/mht.png'),
+                        backgroundImage: AssetImage('/images/mht.png'),
                       ),
                       const SizedBox(height: 20,),
                       Text('Hey Samson, Do you want to check in today?',

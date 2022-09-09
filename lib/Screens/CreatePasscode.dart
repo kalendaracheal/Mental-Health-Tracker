@@ -1,21 +1,21 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentalhealthtracker/Screens/CreatePasscode.dart';
-import 'package:mentalhealthtracker/Screens/MyJournal.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'Journal.dart';
+import 'MyJournal.dart';
 
-class Journal extends StatefulWidget {
-  const Journal({Key? key}) : super(key: key);
+class CreatePasscode extends StatefulWidget {
+  const CreatePasscode({Key? key}) : super(key: key);
 
   @override
-  State<Journal> createState() => _JournalState();
+  State<CreatePasscode> createState() => _CreatePasscodeState();
 }
 
-class _JournalState extends State<Journal> {
-final passcode_controller = TextEditingController();
+class _CreatePasscodeState extends State<CreatePasscode> {
+  final passcode_controller = TextEditingController();
+  final comfirmpasscode_controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
@@ -33,11 +33,7 @@ final passcode_controller = TextEditingController();
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
-               Text('Welcome Back',
-                  style: GoogleFonts.varelaRound(fontSize: 16, color: Colors.grey)),
-              const SizedBox(height: 10,),
-               Text('Daily Journal',
+              Text('Register Passcode',
                   style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 20)),
 
               const SizedBox(height: 10,),
@@ -46,7 +42,7 @@ final passcode_controller = TextEditingController();
                 backgroundImage: AssetImage('/images/mht.png'),
               ),
               const SizedBox(height: 20,),
-               Text('Enter Passcode to proceed',
+              Text('Create Passcode',
                   style: GoogleFonts.balsamiqSans(fontSize: 16) ),
 
               const SizedBox(height: 40,),
@@ -59,33 +55,45 @@ final passcode_controller = TextEditingController();
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Empty Fields Found ')));
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 12.0,),
+              TextFormField(
+                controller: comfirmpasscode_controller,
+                decoration: const InputDecoration(
+                  hintText: 'Confirm passcode',
+                  border: OutlineInputBorder(),
 
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
                   }
                   return null;
                 },
               ),
               const SizedBox(height: 40,),
               MaterialButton( onPressed: () async {
-                final prefs = await SharedPreferences.getInstance();
-                String? storedCode = prefs.getString('storedPasscode');
-               // print(storedCode?.trimRight());
-                if(passcode_controller.text.toString() != storedCode.toString()) {
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Passcode doesnt match')));
-                }
-
-                else {
+                if( passcode_controller.text !=  comfirmpasscode_controller.text ){
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:  Text('Passcodes are different')));
+                } else {
+                  final prefs = await SharedPreferences.getInstance();
+                  prefs.setString('storedPasscode', passcode_controller.text );
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const  MyJournal()),
+                    MaterialPageRoute(builder: (context) => const MyJournal()),
                   );
                 }
 
               },
-              child: Text('Continue',
-                  style: GoogleFonts.balsamiqSans(fontSize: 17, color: Colors.white),
-              ),
-                color: Colors.lightBlueAccent.shade400,
+                child: Text('Register Passcode',
+                  style: GoogleFonts.balsamiqSans(fontSize: 17, fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+               color: Colors.lightBlueAccent.shade400,
+
               ),
               SizedBox(
                 height: size.height*0.02,
@@ -95,26 +103,26 @@ final passcode_controller = TextEditingController();
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('Don\'t you have a passcode?'),
+                    const Text('Already have a passcode?'),
 
                     InkWell(
                       onTap: (){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const  CreatePasscode()),
-                          );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const  Journal()),
+                        );
                       },
-                      child: Text('Create Passcode',
-                      style: GoogleFonts.balsamiqSans(color: Colors.lightBlue, fontWeight: FontWeight.bold),),
+                      child: Text('Journal',
+                        style: GoogleFonts.balsamiqSans(color: Colors.lightBlue, fontWeight: FontWeight.bold),),
                     )
                   ],
                 ),
               )
-            ],
+              ],
           ),
         ),
       ),
 
-        );
+    );
   }
 }
