@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
+import 'package:mentalhealthtracker/page/Videos.dart';
 
 class videoplayer extends StatefulWidget {
   const videoplayer({Key? key}) : super(key: key);
@@ -245,3 +246,313 @@ class _PlayerVideoAndPopPageState extends State<_PlayerVideoAndPopPage> {
     );
   }
 }
+
+
+
+//calling the videos
+class videocall extends StatefulWidget {
+  const videocall({Key? key}) : super(key: key);
+
+  @override
+  State<videocall> createState() => _videocallState();
+}
+
+class _videocallState extends State<videocall> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFE1F5FE),
+      appBar: AppBar(
+        title: Text('Therapetic Videos'),
+      ),
+      body:
+
+      ListView(
+        children: [
+          Therapeticvideos(
+            videoPlayerController:  VideoPlayerController.asset(
+              'assets/videos/avatorglow.mp4'
+            ),
+            looping: true,
+          ),
+
+          Therapeticvideos(
+            videoPlayerController:  VideoPlayerController.asset(
+                'assets/videos/appbar.mp4'
+            ),
+            looping: true,
+          ),
+          Therapeticvideos(
+            videoPlayerController:  VideoPlayerController.asset(
+                'assets/videos/avatorglow.mp4'
+            ),
+            looping: true,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+//Designing for videos
+class meditate extends StatefulWidget {
+  const meditate({Key? key}) : super(key: key);
+
+  @override
+  State<meditate> createState() => _meditateState();
+}
+
+class _meditateState extends State<meditate> {
+  @override
+  Widget build(BuildContext context) {
+    var borderRadius = const BorderRadius.all(Radius.circular(12));
+    bool active = false;
+    return Scaffold(
+      backgroundColor: const Color(0xFFE1F5FE),
+      appBar: AppBar(
+        leading: const BackButton(
+          color: Colors.black,
+        ),
+        title: Text('             Mental Health Tracker',
+            style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 20)),
+        elevation: 0,
+        backgroundColor:  Colors.transparent,
+      ),
+      body: ListView(
+
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ListTile(
+              title: Text('Anxiety'),
+              tileColor: Colors.lightBlueAccent,
+              subtitle: Text('Know how to control your self when you have a panic attack'),
+              shape: RoundedRectangleBorder(borderRadius: borderRadius),
+              selectedTileColor: Colors.orange[100],
+              selected: active,
+              trailing: Icon(Icons.chevron_right),
+
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const videocall()),
+                );
+
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              title: Text('Anxiety'),
+              tileColor: Colors.lightBlueAccent,
+              subtitle: Text('Know how to control your self when you have a panic attack'),
+              shape: RoundedRectangleBorder(borderRadius: borderRadius),
+              selectedTileColor: Colors.orange[100],
+              selected: active,
+              trailing: Icon(Icons.chevron_right),
+
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Videocall2()),
+                );
+
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              title: Text('Anxiety'),
+              tileColor: Colors.lightBlueAccent,
+              subtitle: Text('Know how to control your self when you have a panic attack'),
+              shape: RoundedRectangleBorder(borderRadius: borderRadius),
+              selectedTileColor: Colors.orange[100],
+              selected: active,
+              trailing: Icon(Icons.chevron_right),
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Videocall3()),
+                );
+
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              title: Text('Anxiety'),
+              tileColor: Colors.lightBlueAccent,
+              subtitle: Text('Know how to control your self when you have a panic attack'),
+              shape: RoundedRectangleBorder(borderRadius: borderRadius),
+              selectedTileColor: Colors.orange[100],
+              selected: active,
+              trailing: Icon(Icons.chevron_right),
+
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const videocall()),
+                );
+
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              title: Text('Anxiety'),
+              tileColor: Colors.lightBlueAccent,
+              subtitle: Text('Know how to control your self when you have a panic attack'),
+              shape: RoundedRectangleBorder(borderRadius: borderRadius),
+              selectedTileColor: Colors.orange[100],
+              selected: active,
+              trailing: Icon(Icons.chevron_right),
+
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const videocall()),
+                );
+
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              title: Text('Anxiety'),
+              tileColor: Colors.lightBlueAccent,
+              subtitle: Text('Know how to control your self when you have a panic attack'),
+              shape: RoundedRectangleBorder(borderRadius: borderRadius),
+              selectedTileColor: Colors.white,
+              selected: active,
+              trailing: Icon(Icons.chevron_right),
+              onTap: (){
+
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+
+                  children: [
+                    Text('Disorders'),
+                    Text('Here for you')
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('Anxiety loop'),
+                    Text('Here for you')
+                  ],
+                )
+
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+
+                  children: [
+                    Text('Disorders'),
+                    Text('Here for you')
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('Anxiety loop'),
+                    Text('Here for you')
+                  ],
+                )
+
+              ],
+            ),
+          ),
+
+        ],
+      ),
+
+    );
+  }
+}
+
+class Videocall2 extends StatefulWidget {
+  const Videocall2({Key? key}) : super(key: key);
+
+  @override
+  State<Videocall2> createState() => _Videocall2State();
+}
+
+class _Videocall2State extends State<Videocall2> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFE1F5FE),
+      appBar: AppBar(
+        title: Text('Anxiety'),
+      ),
+      body:
+
+      ListView(
+        children: [
+          Therapeticvideos(
+            videoPlayerController:  VideoPlayerController.asset(
+                'assets/videos/avatorglow.mp4'
+            ),
+            looping: true,
+          ),
+
+        ],
+      ),
+    );
+  }
+}
+
+class Videocall3 extends StatefulWidget {
+  const Videocall3({Key? key}) : super(key: key);
+
+  @override
+  State<Videocall3> createState() => _Videocall3State();
+}
+
+class _Videocall3State extends State<Videocall3> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFE1F5FE),
+      appBar: AppBar(
+        title: Text('Therapetic Videos'),
+      ),
+      body:
+
+      ListView(
+        children: [
+
+          Therapeticvideos(
+            videoPlayerController:  VideoPlayerController.asset(
+                'assets/videos/appbar.mp4'
+            ),
+            looping: true,
+          ),
+
+        ],
+      ),
+    );
+  }
+}
+
+

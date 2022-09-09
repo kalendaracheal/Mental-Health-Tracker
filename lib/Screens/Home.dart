@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/Journal.dart';
 import 'package:mentalhealthtracker/Screens/Quiz.dart';
+import 'package:mentalhealthtracker/page/Selfcare.dart';
 import 'package:mentalhealthtracker/page/videoplayer.dart';
-import 'Quotes_page.dart';
 class Home extends StatefulWidget {
   int selectedIndex;
    Home({Key? key, this.selectedIndex = 0}) : super(key: key);
@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
   List<Widget> screens = [
 
     const Quiz(),
-    const Quotes_page(),
+    const Selfcare(),
     const Journal(),
     const videoplayer(),
       //const Tools()

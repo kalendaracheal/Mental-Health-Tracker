@@ -3,7 +3,9 @@
 
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
-import 'package:mentalhealthtracker/Screens/Journal.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../page/Selfcare.dart';
 
 class Congratulations extends StatefulWidget {
   const Congratulations({Key? key}) : super(key: key);
@@ -30,8 +32,10 @@ class _CongratulationsState extends State<Congratulations> {
         Scaffold(
 
             appBar: AppBar(
-                title: const Text('Mental Health Tracker'),
-                        ),
+                title: Text('Mental Health Tracker',
+        style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 20)),
+    ),
+
          // backgroundColor: Colors.purpleAccent[100],
           body: Center(
 
@@ -74,7 +78,7 @@ class _CongratulationsState extends State<Congratulations> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Journal()),
+                  MaterialPageRoute(builder: (context) => const Selfcare()),
                 );
               },
               child: const Text("Next")

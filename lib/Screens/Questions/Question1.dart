@@ -21,6 +21,7 @@ class _Question1State extends State<Question1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFE3F2FD),
       appBar: AppBar(
         leading: const BackButton(
           color: Colors.black,
@@ -40,7 +41,7 @@ class _Question1State extends State<Question1> {
 
                   child: Column(
                     children: [
-                      const SizedBox(height: 20,),
+                      const SizedBox(height: 5,),
                       Text('Take Quiz',
                         style: TextStyle( fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue[700] ),),
 
@@ -135,7 +136,7 @@ class _Question1State extends State<Question1> {
                     ],
                   ),
                 ),
-
+                const SizedBox(height: 30,),
               ],
             ),
           )

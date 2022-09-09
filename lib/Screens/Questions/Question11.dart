@@ -20,7 +20,7 @@ class _Question11State extends State<Question11> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.grey[300],
+      backgroundColor: const Color(0xFFE3F2FD),
       body: Center(
 
           child: Column(

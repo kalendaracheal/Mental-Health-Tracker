@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/quotes.dart';
 
 
@@ -40,6 +41,16 @@ class Quotes_pageState extends State<Quotes_page> {
     var height = MediaQuery.of(context).size.height;
 
     return Scaffold(
+        backgroundColor: const Color(0xFFE3F2FD),
+        appBar: AppBar(
+          leading: const BackButton(
+            color: Colors.black,
+          ),
+          title: Text('             Inspirational Quotes',
+              style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 20)),
+          elevation: 0,
+          backgroundColor:  Colors.transparent,
+        ),
         body:
         imageList != null ?
         Stack(

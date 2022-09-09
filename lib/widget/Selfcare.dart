@@ -65,17 +65,6 @@ The main signs of ongoing anxiety include:
       body: Column(
         children: [
 
-          SizedBox(
-            height: 100,
-            child: ListView.builder(
-              itemCount: tools.length,
-              scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index)
-                {
-                  return MyCircle(child: tools[index]);
-                 }
-              ),
-          ),
           Expanded(
             child: ListView.builder(
               itemCount: content.length,

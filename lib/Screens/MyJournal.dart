@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/Memories.dart';
 
-import 'Journal.dart';
+import 'Home.dart';
 class MyJournal extends StatefulWidget {
   const MyJournal({Key? key}) : super(key: key);
 
@@ -100,7 +100,7 @@ class _MyJournalState extends State<MyJournal> {
                                 onPressed: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const Journal()),
+                                    MaterialPageRoute(builder: (context) =>  Home()),
                                   );
                                 },
                                 icon: const Icon(Icons.arrow_back),

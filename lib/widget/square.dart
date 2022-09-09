@@ -25,31 +25,6 @@ class MySquare extends StatelessWidget {
   }
 }
 
-class MyCircle extends StatelessWidget {
-  final String child;
-  const MyCircle({required this.child,    Key? key,}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        height: 100,
-        width: 100,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.pinkAccent[100],
-        ),
-
-        child: Center(
-          child: Text(child,
-              style: GoogleFonts.balsamiqSans(fontWeight: FontWeight.bold, fontSize: 16)
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class JournalCard extends StatelessWidget {
   final String? title;
   final String? notes;
@@ -62,15 +37,15 @@ class JournalCard extends StatelessWidget {
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('kk:mm:ss \n EEE d MMM').format(now);
 
-    var widget;
     return Scaffold(
+      backgroundColor: const Color(0xFFE1F5FE),
       body: Center(
           child: ListView(
 
               children: [
 
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: ListTile(
                     leading: Icon(Icons.wallet),
                     tileColor: Colors.lightBlueAccent[100],
