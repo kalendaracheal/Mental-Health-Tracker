@@ -42,7 +42,7 @@ class _SelfcareState extends State<Selfcare> {
                   tileColor: Colors.lightBlueAccent[100],
                   subtitle:  Text('Would you like to check in today',
                       style: GoogleFonts.balsamiqSans(fontSize: 16)),
-                  contentPadding: EdgeInsets.all(10.0),
+                  contentPadding: const EdgeInsets.all(10.0),
                   shape: RoundedRectangleBorder(borderRadius: borderRadius),
                   selectedTileColor: Colors.orange,
                   selected: active,
@@ -66,7 +66,7 @@ class _SelfcareState extends State<Selfcare> {
                   tileColor: Colors.lightBlueAccent[100],
                   subtitle: Text('You can jot down your thoughts on how this day has been so far',
                       style: GoogleFonts.balsamiqSans(fontSize: 16)),
-                  contentPadding: EdgeInsets.all(10.0),
+                  contentPadding: const EdgeInsets.all(10.0),
                   shape: RoundedRectangleBorder(borderRadius: borderRadius),
                   selectedTileColor: Colors.orange[100],
                   selected: active,
@@ -90,7 +90,7 @@ class _SelfcareState extends State<Selfcare> {
                     tileColor: Colors.lightBlueAccent[100],
                     subtitle:  Text('Fill your thoughts with a positive mind set',
                         style: GoogleFonts.balsamiqSans(fontSize: 16)),
-                    contentPadding: EdgeInsets.all(10.0),
+                    contentPadding: const EdgeInsets.all(10.0),
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
                     selectedTileColor: Colors.orange[100],
                     selected: active,
@@ -114,7 +114,7 @@ class _SelfcareState extends State<Selfcare> {
                     tileColor: Colors.lightBlueAccent[100],
                     subtitle:  Text('Know how to control your self when you have a panic attack',
                         style: GoogleFonts.balsamiqSans(fontSize: 16)),
-                    contentPadding: EdgeInsets.all(10.0),
+                    contentPadding: const EdgeInsets.all(10.0),
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
                     selectedTileColor: Colors.orange[100],
                     selected: active,
@@ -123,7 +123,7 @@ class _SelfcareState extends State<Selfcare> {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const videocall()),
+                        MaterialPageRoute(builder: (context) => const Videocall()),
                       );
 
                     },
@@ -138,7 +138,7 @@ class _SelfcareState extends State<Selfcare> {
                     tileColor: Colors.lightBlueAccent[100],
                     subtitle: Text('Explore and see how meditation cam help relax your mind',
                         style: GoogleFonts.balsamiqSans(fontSize: 16)),
-                    contentPadding: EdgeInsets.all(10.0),
+                    contentPadding: const EdgeInsets.all(10.0),
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
                     selectedTileColor: Colors.orange[100],
                     selected: active,
@@ -162,7 +162,7 @@ class _SelfcareState extends State<Selfcare> {
                     tileColor: Colors.lightBlueAccent[100],
                     subtitle:  Text('Know how to control your self when you have a panic attack',
                         style: GoogleFonts.balsamiqSans(fontSize: 16)),
-                    contentPadding: EdgeInsets.all(10.0),
+                    contentPadding: const EdgeInsets.all(10.0),
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
                     selectedTileColor: Colors.orange[100],
                     selected: active,
@@ -171,7 +171,7 @@ class _SelfcareState extends State<Selfcare> {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const videocall()),
+                        MaterialPageRoute(builder: (context) => const Videocall()),
                       );
 
                     },
@@ -186,7 +186,7 @@ class _SelfcareState extends State<Selfcare> {
                     tileColor: Colors.lightBlueAccent[100],
                     subtitle: Text('Know how to control your self when you have a panic attack',
                         style: GoogleFonts.balsamiqSans(fontSize: 16)),
-                    contentPadding: EdgeInsets.all(10.0),
+                    contentPadding: const EdgeInsets.all(10.0),
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
                     selectedTileColor: Colors.orange[100],
                     selected: active,

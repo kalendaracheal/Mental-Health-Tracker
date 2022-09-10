@@ -1,5 +1,7 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 //import 'package:video_player/video_player.dart';
 //import 'package:mentalhealthtracker/page/chats_page.dart';
@@ -11,13 +13,13 @@ import 'Screens/Login.dart';
 void main(){
   runApp(const MyApp());
 }
-//
+
 // Future main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await Firebase.initializeApp();
 //   final refUser = FirebaseFirestore.instance.collection('user').doc();
 //   await refUser.set({'Username': 'Alex'});
-//   options: FirebaseOptions(
+//   options: const FirebaseOptions(
 //     apiKey: "AIzaSyA3oMq9-4YRKQYUzTn-5CH-mPdC0iZT0e0", // Your apiKey
 //     appId: "1:492379073970:android:7fd28abd351ab5a45208ab", // Your appId
 //     messagingSenderId: "492379073970", // Your messagingSenderId
@@ -59,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return const Scaffold(
         backgroundColor: Color(0xFFBBDEFB),
         // appBar: AppBar(
         //

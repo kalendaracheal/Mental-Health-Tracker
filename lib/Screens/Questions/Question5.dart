@@ -2,7 +2,6 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/Questions/Question6.dart';
 
 import '../../widget/question_widget.dart';

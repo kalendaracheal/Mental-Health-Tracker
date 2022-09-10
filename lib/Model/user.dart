@@ -3,7 +3,7 @@
 import '../utils.dart';
 
 class UserField {
-  static final String lastMessageTime = 'lastMessageTime';
+  static const String lastMessageTime = 'lastMessageTime';
 }
 
 class User {

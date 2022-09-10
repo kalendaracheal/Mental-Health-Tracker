@@ -26,8 +26,7 @@ class _TherapeticvideosState extends State<Therapeticvideos> {
       // Prepare the video to be played and display the first frame
       autoInitialize: true,
       looping: widget.looping,
-      // Errors can occur for example when trying to play a video
-      // from a non-existent URL
+
       errorBuilder: (context, errorMessage) {
         return Center(
           child: Text(
@@ -54,12 +53,7 @@ class _TherapeticvideosState extends State<Therapeticvideos> {
       chewieController.dispose();
     }
 
-   // Future<bool> started() async {
-   //   await chewieController.autoInitialize;
-   //   await chewieController.startAt;
-   //    startedPlaying = true;
-   //   return true;
-   // }
+
 }
 
 
