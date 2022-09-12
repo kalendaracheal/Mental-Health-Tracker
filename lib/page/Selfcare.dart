@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/Quotes_page.dart';
+import 'package:mentalhealthtracker/page/Activities_page.dart';
 import 'package:mentalhealthtracker/page/videoplayer.dart';
 
 import '../Screens/Journal.dart';
@@ -108,11 +109,11 @@ class _SelfcareState extends State<Selfcare> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
-                    title:  Text('Anxiety',
+                    title:  Text('Activity',
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
                     tileColor: Colors.lightBlueAccent[100],
-                    subtitle:  Text('Know how to control your self when you have a panic attack',
+                    subtitle:  Text('Do something to distract your self from worrying',
                         style: GoogleFonts.balsamiqSans(fontSize: 16)),
                     contentPadding: const EdgeInsets.all(10.0),
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
@@ -123,7 +124,7 @@ class _SelfcareState extends State<Selfcare> {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Videocall()),
+                        MaterialPageRoute(builder: (context) => const Activities_page()),
                       );
 
                     },
