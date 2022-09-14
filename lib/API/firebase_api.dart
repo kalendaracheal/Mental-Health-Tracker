@@ -47,7 +47,7 @@ class FirebaseApi {
     } else {
       for (final user in users) {
         final userDoc = refUsers.doc();
-        final newUser = user.copyWith(idUser: userDoc.id, name: '', urlAvatar: '', lastMessageTime: DateTime.now());
+        final newUser = user.copyWith(idUser: userDoc.id, name: 'Barack Obama', urlAvatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/480px-President_Barack_Obama.jpg', lastMessageTime: DateTime.now());
 
         await userDoc.set(newUser.toJson());
       }

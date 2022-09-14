@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentalhealthtracker/Screens/Congratulations.dart';
+import 'package:mentalhealthtracker/Screens/My%20screens/Congratulations.dart';
 
 enum SingingCharacter { not_difficult_all, somewhat_difficult, very_difficult , extremely_difficult }
 

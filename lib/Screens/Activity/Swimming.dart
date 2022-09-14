@@ -14,7 +14,7 @@ class _SwimmingState extends State<Swimming> {
   @override
   Widget build(BuildContext context) {
     return Activity_widget(
-      activityPicture: 'assets/images/bg.png',
+      activityPicture: 'assets/images/swim.jpg',
       activityHeader: 'Swimming',
       activityBody: '''Bring a book or some music along and spend a couple of hours swimming and relaxing in the sun. If the beach is inaccessible, see if your local community center has an outdoor swimming pool you can use.''',
       onPressed: () {

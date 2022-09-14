@@ -14,11 +14,10 @@ class _ReadState extends State<Read> {
   @override
   Widget build(BuildContext context) {
     return Activity_widget(
-      activityPicture: 'assets/images/bg.png',
-      activityHeader: 'Reading in the park',
-      activityBody: '''Sometimes, being among a crowd of people can be comforting and make you feel less lonely and isolated. 
-      Sitting with a good book and maybe some small snacks in a park on a sunny day may be one of the best simple activities
-       to fight depression''',
+      activityPicture: 'assets/images/Readinthepark.jpg',
+      activityHeader: 'Read',
+      activityBody: '''Sometimes, there’s nothing better than getting lost in a good mystery book or spend some time learning about ancient history. Whatever your interest, there’s probably a book on it, and reading is a perfect way to distract yourself from unhappy thoughts while also stimulating your brain. Magazines, graphic novels, newspapers and comic books are also valid reading material.
+''',
       onPressed: () {
         Navigator.push(
           context,

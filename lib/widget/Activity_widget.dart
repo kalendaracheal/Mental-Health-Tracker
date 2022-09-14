@@ -21,6 +21,7 @@ class _Activity_widgetState extends State<Activity_widget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: const Color(0xFFE3F2FD),
       appBar: AppBar(
         leading: const BackButton(
@@ -41,6 +42,7 @@ class _Activity_widgetState extends State<Activity_widget> {
                 fit: BoxFit.fitWidth,
                 height: 200.0,
                 width: 400.0,
+
                ),
               const SizedBox(height: 12.0,),
               Padding(

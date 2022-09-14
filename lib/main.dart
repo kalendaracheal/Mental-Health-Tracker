@@ -2,20 +2,31 @@
 //import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:mentalhealthtracker/page/Activities_page.dart';
+import 'package:mentalhealthtracker/page/chat_page.dart';
+import 'package:mentalhealthtracker/users.dart';
+import 'API/firebase_api.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:mentalhealthtracker/page/chats_page.dart';
 //import 'package:video_player/video_player.dart';
 //import 'package:mentalhealthtracker/page/chats_page.dart';
 
-import 'Screens/Login.dart';
+import 'Screens/My screens/Login.dart';
 
 
 
-void main(){
-  runApp( MyApp());
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+  );
+  // final refUser = FirebaseFirestore.instance.collection('users').doc();
+ // await refUser.set({'idUser': '001', 'name': 'Baraka Obama', 'urlAvatar': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/480px-President_Barack_Obama.jpg', 'lastMessageTime': DateTime.now()});
+  await FirebaseApi.addRandomUsers(Users.initUsers);
+
+  runApp(const MyApp());
 }
-
 
 
 class MyApp extends StatelessWidget {
@@ -47,48 +58,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // @override
-  // void initState(){
-  //   super.initState();
-  //   //upload();
-  //   mychat();
-  // }
-  // Future mychat() async {
-  //   WidgetsFlutterBinding.ensureInitialized();
-  //   await Firebase.initializeApp();
-  //   final refUser = FirebaseFirestore.instance.collection('users').doc();
-  //   await refUser.set({'Username': 'Alex'});
-  //   options: const FirebaseOptions(
-  //     apiKey: "AIzaSyA3oMq9-4YRKQYUzTn-5CH-mPdC0iZT0e0", // Your apiKey
-  //     appId: "1:492379073970:android:7fd28abd351ab5a45208ab", // Your appId
-  //     messagingSenderId: "492379073970", // Your messagingSenderId
-  //     projectId: "mental-health-tracker-01", // Your projectId
-  //   );
-  //  options: DefaultFirebaseOptions.currentPlatform;
-  //   runApp(const MyApp());
-  // }
-  // Future upload() async{
-  //   await Firebase.initializeApp();
-  //
-  //   //Upload document to firestore
-  //   final refUser = FirebaseFirestore.instance.collection('users').doc();
-  //   await refUser.set({'username': 'alex'});
-  // }
+
 
   @override
 
   Widget build(BuildContext context) {
 
-    return  Scaffold(
-        backgroundColor: Color(0xFFBBDEFB),
+    return  const Scaffold(
+        backgroundColor: const Color(0xFFBBDEFB),
         // appBar: AppBar(
         //
         //   title: Text(widget.title),
         //
         // ),
+        //body: Activities_page()
 
        body: Login()
-       //body: ChatsPage()
+       //body: ChatsPage(),
     );
   }
 }

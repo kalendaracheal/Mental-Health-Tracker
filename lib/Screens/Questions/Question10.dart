@@ -8,6 +8,7 @@ import '../../widget/question_widget.dart';
 
 
 enum SingingCharacter { not_at_all, several_days, more_than_half_the_days, nearly_everyday}
+int selectedRadiotile = 0;
 class Question10 extends StatefulWidget {
   const Question10({Key? key}) : super(key: key);
 
@@ -24,6 +25,7 @@ class _Question10State extends State<Question10> {
       questionHeader: 'Question',
       questionNumber: '9',
       question: 'Thoughts that you would be better off dead or of hurting yourself in some way   ',
+
       onPressed: () {
         Navigator.push(
           context,
