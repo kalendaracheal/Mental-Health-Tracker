@@ -29,10 +29,7 @@ class _CongratulationsState extends State<Congratulations> {
     return Stack(
       alignment: Alignment.center,
       children: [
-        ConfettiWidget(
-          confettiController: myController,
-          blastDirectionality: BlastDirectionality.explosive,
-        ),
+
         Scaffold(
 
             appBar: AppBar(
@@ -89,6 +86,11 @@ class _CongratulationsState extends State<Congratulations> {
               child: const Text("Next")
           ),
                     ),
+
+        ConfettiWidget(
+          confettiController: myController,
+          blastDirectionality: BlastDirectionality.explosive,
+        ),
 
                 ],
     );

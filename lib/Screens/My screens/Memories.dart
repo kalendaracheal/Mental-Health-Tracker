@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:mentalhealthtracker/Contollers/memories_controller.dart';
 import 'package:mentalhealthtracker/Screens/My%20screens/Home.dart';
-import 'package:mentalhealthtracker/widget/journal_card.dart';
+import 'package:mentalhealthtracker/widget/Journal_Card.dart';
 
 class Memories extends StatefulWidget {
   const Memories({Key? key}) : super(key: key);

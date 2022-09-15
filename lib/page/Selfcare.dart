@@ -148,7 +148,7 @@ class _SelfcareState extends State<Selfcare> {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Videocall2()),
+                        MaterialPageRoute(builder: (context) => const Meditate()),
                       );
 
                     },
@@ -161,7 +161,7 @@ class _SelfcareState extends State<Selfcare> {
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
                     tileColor: Colors.lightBlueAccent[100],
-                    subtitle:  Text('Know how to control your self when you have a panic attack',
+                    subtitle:  Text('Know how to control yourself when anxious',
                         style: GoogleFonts.balsamiqSans(fontSize: 16)),
                     contentPadding: const EdgeInsets.all(10.0),
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
@@ -185,7 +185,7 @@ class _SelfcareState extends State<Selfcare> {
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
                     tileColor: Colors.lightBlueAccent[100],
-                    subtitle: Text('Know how to control your self when you have a panic attack',
+                    subtitle: Text('A mindful way out of anxiety',
                         style: GoogleFonts.balsamiqSans(fontSize: 16)),
                     contentPadding: const EdgeInsets.all(10.0),
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),

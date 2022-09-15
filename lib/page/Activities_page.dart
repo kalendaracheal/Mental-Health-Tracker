@@ -8,6 +8,7 @@ import 'package:mentalhealthtracker/Screens/Activity/Gardening.dart';
 import 'package:mentalhealthtracker/Screens/Activity/Massage.dart';
 import 'package:mentalhealthtracker/Screens/Activity/Meditation.dart';
 import 'package:mentalhealthtracker/Screens/Activity/Movie.dart';
+import 'package:mentalhealthtracker/Screens/Activity/OtherActivities.dart';
 import 'package:mentalhealthtracker/Screens/Activity/Read.dart';
 import 'package:mentalhealthtracker/Screens/Activity/Swimming.dart';
 import 'package:mentalhealthtracker/Screens/Activity/Take_a_walk.dart';
@@ -16,6 +17,7 @@ import 'package:mentalhealthtracker/Screens/My%20screens/Home.dart';
 import '../Screens/Activity/Bath.dart';
 import '../Screens/Activity/Games.dart';
 import '../Screens/Activity/Have-A-Bite.dart';
+import '../Screens/Activity/Music.dart';
 import '../Screens/Activity/Yoga.dart';
 
 class Activities_page extends StatefulWidget {
@@ -56,7 +58,7 @@ class _Activities_pageState extends State<Activities_page> {
                 const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
             child: ListTile(
               title: Text(
-                'Take a walk/ Go Jogging',
+                'Take a walk',
                 style: GoogleFonts.varelaRound(
                     fontWeight: FontWeight.bold, fontSize: 17),
               ),
@@ -270,6 +272,32 @@ class _Activities_pageState extends State<Activities_page> {
                 const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: ListTile(
                   title: Text(
+                    'Listen to Music',
+                    style: GoogleFonts.varelaRound(
+                        fontWeight: FontWeight.bold, fontSize: 17),
+                  ),
+                  tileColor: Colors.lightBlueAccent[100],
+                  subtitle: Text(
+                      'music can change the way we act, feel and think. ',
+                      style: GoogleFonts.balsamiqSans(fontSize: 16)),
+                  contentPadding: const EdgeInsets.all(10.0),
+                  shape: RoundedRectangleBorder(borderRadius: borderRadius),
+                  selectedTileColor: Colors.orange[100],
+                  selected: active,
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Music()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding:
+                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+                child: ListTile(
+                  title: Text(
                     'Read a book/ newspaper',
                     style: GoogleFonts.varelaRound(
                         fontWeight: FontWeight.bold, fontSize: 17),
@@ -458,6 +486,32 @@ class _Activities_pageState extends State<Activities_page> {
                   ),
                   tileColor: Colors.lightBlueAccent[100],
                   subtitle: Text(
+                      'Challenge your mind to be creative',
+                      style: GoogleFonts.balsamiqSans(fontSize: 16)),
+                  contentPadding: const EdgeInsets.all(10.0),
+                  shape: RoundedRectangleBorder(borderRadius: borderRadius),
+                  selectedTileColor: Colors.orange[100],
+                  selected: active,
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Games()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding:
+                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+                child: ListTile(
+                  title: Text(
+                    'Video Games',
+                    style: GoogleFonts.varelaRound(
+                        fontWeight: FontWeight.bold, fontSize: 17),
+                  ),
+                  tileColor: Colors.lightBlueAccent[100],
+                  subtitle: Text(
                       'It is great way of relaxing your mind',
                       style: GoogleFonts.balsamiqSans(fontSize: 16)),
                   contentPadding: const EdgeInsets.all(10.0),
@@ -469,6 +523,32 @@ class _Activities_pageState extends State<Activities_page> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const Games()),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding:
+                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+                child: ListTile(
+                  title: Text(
+                    'Other',
+                    style: GoogleFonts.varelaRound(
+                        fontWeight: FontWeight.bold, fontSize: 17),
+                  ),
+                  tileColor: Colors.lightBlueAccent[100],
+                  subtitle: Text(
+                      'We have a wide range of things we can do make our day better',
+                      style: GoogleFonts.balsamiqSans(fontSize: 16)),
+                  contentPadding: const EdgeInsets.all(10.0),
+                  shape: RoundedRectangleBorder(borderRadius: borderRadius),
+                  selectedTileColor: Colors.orange[100],
+                  selected: active,
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const OtherActivities()),
                     );
                   },
                 ),

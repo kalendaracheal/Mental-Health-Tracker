@@ -46,7 +46,7 @@ class _Activity_widgetState extends State<Activity_widget> {
                ),
               const SizedBox(height: 12.0,),
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.symmetric(vertical: 12,horizontal: 16),
                 child: Column(
                   children: [
                     Text('${widget.activityHeader}',

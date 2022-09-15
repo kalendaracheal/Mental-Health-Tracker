@@ -16,7 +16,7 @@ class _MassageState extends State<Massage> {
     return Activity_widget(
       activityPicture: 'assets/images/massage.jpg',
       activityHeader: 'Get a massage',
-      activityBody: '''If baths don’t do anything for you, book a massage for yourself and allow a professional to help you relax, body and mind.''',
+      activityBody: '''If baths don’t do anything for you, book a massage for yourself and allow a professional to help you relax, body and mind. Massage therapy has also been linked to both improvement in sleep. ''',
       onPressed: () {
         Navigator.push(
           context,

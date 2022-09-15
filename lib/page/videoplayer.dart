@@ -271,23 +271,23 @@ class _VideocallState extends State<Videocall> {
         children: [
           Therapeticvideos(
             videoPlayerController:  VideoPlayerController.asset(
-              'assets/videos/avatorglow.mp4'
+              'assets/videos/AnxietyLoop.mp4'
             ),
             looping: true,
           ),
 
-          Therapeticvideos(
-            videoPlayerController:  VideoPlayerController.asset(
-                'assets/videos/appbar.mp4'
-            ),
-            looping: true,
-          ),
-          Therapeticvideos(
-            videoPlayerController:  VideoPlayerController.asset(
-                'assets/videos/avatorglow.mp4'
-            ),
-            looping: true,
-          ),
+          // Therapeticvideos(
+          //   videoPlayerController:  VideoPlayerController.asset(
+          //       'assets/videos/appbar.mp4'
+          //   ),
+          //   looping: true,
+          // ),
+          // Therapeticvideos(
+          //   videoPlayerController:  VideoPlayerController.asset(
+          //       'assets/videos/avatorglow.mp4'
+          //   ),
+          //   looping: true,
+          // ),
         ],
       ),
     );
@@ -311,181 +311,22 @@ class _MeditateState extends State<Meditate> {
     return Scaffold(
       backgroundColor: const Color(0xFFE1F5FE),
       appBar: AppBar(
-        leading: const BackButton(
-          color: Colors.black,
-        ),
-        title: Text('             Mental Health Tracker',
-            style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 20)),
-        elevation: 0,
-        backgroundColor:  Colors.transparent,
+        title: const Text('Meditation'),
       ),
-      body: ListView(
+      body:
 
+      ListView(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: ListTile(
-              title: const Text('Anxiety'),
-              tileColor: Colors.lightBlueAccent,
-              subtitle: const Text('Know how to control your self when you have a panic attack'),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
 
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Videocall()),
-                );
-
-              },
+          Therapeticvideos(
+            videoPlayerController:  VideoPlayerController.asset(
+                'assets/videos/meditation.mp4'
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListTile(
-              title: const Text('Anxiety'),
-              tileColor: Colors.lightBlueAccent,
-              subtitle: const Text('Know how to control your self when you have a panic attack'),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Videocall2()),
-                );
-
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListTile(
-              title: const Text('Anxiety'),
-              tileColor: Colors.lightBlueAccent,
-              subtitle: const Text('Know how to control your self when you have a panic attack'),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Videocall3()),
-                );
-
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListTile(
-              title: const Text('Anxiety'),
-              tileColor: Colors.lightBlueAccent,
-              subtitle: const Text('Know how to control your self when you have a panic attack'),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Videocall()),
-                );
-
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListTile(
-              title: const Text('Anxiety'),
-              tileColor: Colors.lightBlueAccent,
-              subtitle: const Text('Know how to control your self when you have a panic attack'),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Videocall()),
-                );
-
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListTile(
-              title: const Text('Anxiety'),
-              tileColor: Colors.lightBlueAccent,
-              subtitle: const Text('Know how to control your self when you have a panic attack'),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.white,
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: (){
-
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-
-                  children: const [
-                    Text('Disorders'),
-                    Text('Here for you')
-                  ],
-                ),
-                Column(
-                  children: const [
-                    Text('Anxiety loop'),
-                    Text('Here for you')
-                  ],
-                )
-
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-
-                  children: const [
-                    Text('Disorders'),
-                    Text('Here for you')
-                  ],
-                ),
-                Column(
-                  children: const [
-                    Text('Anxiety loop'),
-                    Text('Here for you')
-                  ],
-                )
-
-              ],
-            ),
+            looping: true,
           ),
 
         ],
       ),
-
     );
   }
 }
@@ -503,7 +344,7 @@ class _Videocall2State extends State<Videocall2> {
     return Scaffold(
       backgroundColor: const Color(0xFFE1F5FE),
       appBar: AppBar(
-        title: const Text('Anxiety'),
+        title: const Text('Mindfulness'),
       ),
       body:
 
@@ -511,7 +352,7 @@ class _Videocall2State extends State<Videocall2> {
         children: [
           Therapeticvideos(
             videoPlayerController:  VideoPlayerController.asset(
-                'assets/videos/avatorglow.mp4'
+                'assets/videos/Mindfulness.mp4'
             ),
             looping: true,
           ),
@@ -544,7 +385,7 @@ class _Videocall3State extends State<Videocall3> {
 
           Therapeticvideos(
             videoPlayerController:  VideoPlayerController.asset(
-                'assets/videos/appbar.mp4'
+                'assets/videos/meditation.mp4'
             ),
             looping: true,
           ),

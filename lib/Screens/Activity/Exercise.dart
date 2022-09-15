@@ -16,7 +16,7 @@ class _ExerciseState extends State<Exercise> {
     return Activity_widget(
       activityPicture: 'assets/images/exercise.jpg',
       activityHeader: 'Exercise',
-      activityBody: '''Exercise is good for both your physical and mental well being.''',
+      activityBody: '''Exercise is good for both your physical and mental well being. Regular exercise seems to encourage the brain to rewire itself in positive ways. It temporarily boosts feel-good chemicals called endorphins.\n\n Exercise improves mental health by reducing anxiety, depression, and negative mood and by improving self-esteem and cognitive function. Exercise has also been found to alleviate symptoms such as low self-esteem and social withdrawal.\n\nExercise is important for people with mental illness – it not only boosts our mood, concentration and alertness, but improves our cardiovascular and overall physical health. Physical activity can be an outlet for your frustrations. Exercise can distract you from negative thoughts and provide opportunities to try new experiences.''',
       onPressed: () {
         Navigator.push(
           context,

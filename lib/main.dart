@@ -6,7 +6,7 @@ import 'package:mentalhealthtracker/page/Activities_page.dart';
 import 'package:mentalhealthtracker/page/chat_page.dart';
 import 'package:mentalhealthtracker/users.dart';
 import 'API/firebase_api.dart';
-import 'firebase_options.dart';
+import 'firebase_options2.dart';
 import 'package:flutter/material.dart';
 import 'package:mentalhealthtracker/page/chats_page.dart';
 //import 'package:video_player/video_player.dart';
