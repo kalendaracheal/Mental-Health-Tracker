@@ -18,7 +18,7 @@ class JournalCard extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       child: ListTile(
         leading: const Icon(Icons.wallet),
-        tileColor: Colors.lightBlueAccent[100],
+        tileColor: const Color(0xFFE1F5FE),
         title:  Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text('$title ',

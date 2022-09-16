@@ -30,7 +30,7 @@ class ChatsPage extends StatelessWidget {
                       return Column(
                         children: [
                           ChatHeaderWidget(users: users),
-                          //ChatBodyWidget(users: users)
+                          ChatBodyWidget(users: users)
                         ],
                       );
                     }

@@ -12,7 +12,6 @@ import 'package:mentalhealthtracker/Screens/Activity/OtherActivities.dart';
 import 'package:mentalhealthtracker/Screens/Activity/Read.dart';
 import 'package:mentalhealthtracker/Screens/Activity/Swimming.dart';
 import 'package:mentalhealthtracker/Screens/Activity/Take_a_walk.dart';
-import 'package:mentalhealthtracker/Screens/My%20screens/Home.dart';
 
 import '../Screens/Activity/Bath.dart';
 import '../Screens/Activity/Games.dart';

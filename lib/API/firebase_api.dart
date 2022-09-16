@@ -10,25 +10,24 @@ class FirebaseApi {
       .collection('users')
       .orderBy(UserField.lastMessageTime, descending: true)
       .snapshots()
-      .transform(Utils.transformer(User.fromJson));
+      .transform(Utils.transformer(User.fromMap));
 
   static Future uploadMessage(String idUser, String message) async {
     final refMessages =
     FirebaseFirestore.instance.collection('chats/$idUser/messages');
 
-    final newMessage = Message(
-      idUser: myId,
-      urlAvatar: myUrlAvatar,
-      username: myUsername,
-      message: message,
-      createdAt: DateTime.now(),
-    );
-    await refMessages.add(newMessage.toJson());
-
+    await refMessages.add({
+      'idUser': myId,
+      'urlAvatar': myUrlAvatar,
+      'username': myUsername,
+      'message': message,
+      'createdAt': DateTime.now()
+    });
+// To update our other user that they have received a new message
     final refUsers = FirebaseFirestore.instance.collection('users');
     await refUsers
         .doc(idUser)
-        .update({UserField.lastMessageTime: DateTime.now()});
+        .update({UserField.lastMessageTime: Timestamp.fromDate(DateTime.now())});
   }
 
   static Stream<List<Message>> getMessages(String idUser) =>
@@ -47,9 +46,9 @@ class FirebaseApi {
     } else {
       for (final user in users) {
         final userDoc = refUsers.doc();
-        final newUser = user.copyWith(idUser: userDoc.id, name: 'Barack Obama', urlAvatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/480px-President_Barack_Obama.jpg', lastMessageTime: DateTime.now());
+        final newUser = user.copyWith(idUser: userDoc.id, name: 'Barack Obama', urlAvatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/480px-President_Barack_Obama.jpg', lastMessageTime: Timestamp.fromDate(DateTime.now()));
 
-        await userDoc.set(newUser.toJson());
+        await userDoc.set(newUser.toMap());
       }
     }
   }

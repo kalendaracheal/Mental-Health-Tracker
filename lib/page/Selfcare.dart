@@ -34,9 +34,14 @@ class _SelfcareState extends State<Selfcare> {
         child: ListView(
 
               children:[
+                //quiz
                 Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: ListTile(
+                  leading: const CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage('/images/qn.jpg'),
+                  ),
                   title:  Text('Take a Quiz',
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                   ),
@@ -58,9 +63,14 @@ class _SelfcareState extends State<Selfcare> {
                   },
                 ),
               ),
+                //Journal
                 Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                 child: ListTile(
+                  leading: const CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage('/images/write.jpg'),
+                  ),
                   title: Text('Journal',
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                 ),
@@ -85,6 +95,10 @@ class _SelfcareState extends State<Selfcare> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
+                    leading: const CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage('/images/quote.jpg'),
+                    ),
                     title:  Text('Inspirational Quotes',
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
@@ -109,6 +123,10 @@ class _SelfcareState extends State<Selfcare> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
+                    leading: const CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage('/images/activity.jpg'),
+                    ),
                     title:  Text('Activity',
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
@@ -133,6 +151,10 @@ class _SelfcareState extends State<Selfcare> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
+                    leading: const CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage('/images/meditation1.jpg'),
+                    ),
                     title: Text('Meditation',
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
@@ -157,6 +179,10 @@ class _SelfcareState extends State<Selfcare> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
+                    leading: const CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage('/images/anxiety.jpg'),
+                    ),
                     title:  Text('Anxiety Loop',
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
@@ -181,6 +207,10 @@ class _SelfcareState extends State<Selfcare> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
+                    leading: const CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage('/images/worry.jpg'),
+                    ),
                     title: Text('Over coming worry',
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                     ),

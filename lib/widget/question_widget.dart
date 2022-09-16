@@ -27,18 +27,10 @@ class _QuestionWigetState extends State<QuestionWiget> {
 
   SingingCharacter? _character = SingingCharacter.not_at_all;
 
-  // setSelectedRadio(int val) {
-  //     setState(() {
-  //       selectedRadio = val;
-  //     });
-  //   },
-
-
-
-  @override
-  Widget build(BuildContext context) {
     // Declare this variable
     int selectedRadio = 0;
+  @override
+  Widget build(BuildContext context) {
     @override
     void initState() {
       super.initState();
@@ -101,14 +93,69 @@ class _QuestionWigetState extends State<QuestionWiget> {
                   padding: const EdgeInsets.only(left: 100, right: 20,top: 10),
                   child: Column(
                     children: [
-                      ListTile(
-                        title: const Text('Not at all'),
-                        leading: Radio<SingingCharacter>(
-                          value: SingingCharacter.not_at_all,
-                          groupValue: _character,
-                          onChanged: (SingingCharacter ? value) {
+                      // ListTile(
+                      //   title: const Text('Not at all'),
+                      //   leading: Radio<SingingCharacter>(
+                      //     value: SingingCharacter.not_at_all,
+                      //     groupValue: _character,
+                      //     onChanged: (SingingCharacter ? value) {
+                      //       setState(() {
+                      //         _character = value;
+                      //         print('$value');
+                      //       });
+                      //     },
+                      //   ),
+                      // ),
+                      // ListTile(
+                      //   title: const Text('Several days'),
+                      //   leading: Radio<SingingCharacter>(
+                      //     value: SingingCharacter.several_days,
+                      //     groupValue: _character,
+                      //     onChanged: (SingingCharacter ? value) {
+                      //       setState(() {
+                      //         _character = value;
+                      //         print('$value');
+                      //       });
+                      //     },
+                      //   ),
+                      // ),
+                      // ListTile(
+                      //   title: const Text('More than half the days'),
+                      //   leading: Radio<SingingCharacter>(
+                      //     value: SingingCharacter.more_than_half_the_days,
+                      //     groupValue: _character,
+                      //     onChanged: (SingingCharacter ? value) {
+                      //       setState(() {
+                      //         _character = value;
+                      //         print('$value');
+                      //       });
+                      //     },
+                      //   ),
+                      // ),
+                      // ListTile(
+                      //   title: const Text('Nearly everyday'),
+                      //   leading: Radio<SingingCharacter>(
+                      //     value: SingingCharacter.nearly_everyday,
+                      //     groupValue: _character,
+                      //     onChanged: (SingingCharacter ? value) {
+                      //       setState(() {
+                      //         _character = value;
+                      //         print('$_character');
+                      //       });
+                      //     },
+                      //   ),
+                      // ),
+
+
+                       
+                       ListTile(
+                        title: const Text('More than half the days'),
+                        leading: Radio<int>(
+                          value: 0,
+                          groupValue: selectedRadio,
+                          onChanged: (int? value) {
                             setState(() {
-                              _character = value;
+                              selectedRadio = value!;
                               print('$value');
                             });
                           },
@@ -116,94 +163,71 @@ class _QuestionWigetState extends State<QuestionWiget> {
                       ),
                       ListTile(
                         title: const Text('Several days'),
-                        leading: Radio<SingingCharacter>(
-                          value: SingingCharacter.several_days,
-                          groupValue: _character,
-                          onChanged: (SingingCharacter ? value) {
+                        leading: Radio<int>(
+                          value: 3,
+                          groupValue: selectedRadio,
+                          onChanged: (int? value) {
                             setState(() {
-                              _character = value;
+                              selectedRadio = value!;
                               print('$value');
                             });
                           },
                         ),
                       ),
-                      ListTile(
-                        title: const Text('More than half the days'),
-                        leading: Radio<SingingCharacter>(
-                          value: SingingCharacter.more_than_half_the_days,
-                          groupValue: _character,
-                          onChanged: (SingingCharacter ? value) {
-                            setState(() {
-                              _character = value;
-                              print('$value');
-                            });
-                          },
-                        ),
-                      ),
-                      ListTile(
-                        title: const Text('Nearly everyday'),
-                        leading: Radio<SingingCharacter>(
-                          value: SingingCharacter.nearly_everyday,
-                          groupValue: _character,
-                          onChanged: (SingingCharacter ? value) {
-                            setState(() {
-                              _character = value;
-                              print('$_character');
-                            });
-                          },
-                        ),
-                      ),
+        RadioListTile<int>(
+                  title: const Text('Not at all'),
+                  value: 0,
+                    groupValue: selectedRadio,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedRadio = value!;
+                        print(selectedRadio);
+                      },
+                      );
+                    }),
+                RadioListTile<int>(
+                    title: const Text('Several days'),
+                    value: 1,
+                    groupValue: selectedRadio,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedRadio = value!;
+                        print(selectedRadio);
+        
+                      },
+                      );
+                    }),
+                RadioListTile<int>(
+                    title: const Text('More than half the days'),
+                    value: 2,
+                    groupValue: selectedRadio,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedRadio = value!;
+                        print(selectedRadio);
+        
+                      },
+                      );
+                    }),
+                RadioListTile<int>(
+                    title: const Text('Nearly everyday'),
+                    value: 3,
+                    groupValue: selectedRadio,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedRadio = value!;
+                        print(selectedRadio);
+        
+                      },
+                      );
+                    }),
                     ],
                   ),
                 ),
 
 
 
-        //
-        // RadioListTile<int>(
-        //           title: const Text('Not at all'),
-        //           value: 0,
-        //             groupValue: selectedRadio,
-        //             onChanged: (value) {
-        //               setState(() {
-        //                 selectedRadio = 0;
-        //
-        //               },
-        //               );
-        //             }),
-        //         RadioListTile<int>(
-        //             title: const Text('Several days'),
-        //             value: 1,
-        //             groupValue: selectedRadio,
-        //             onChanged: (value) {
-        //               setState(() {
-        //                 selectedRadio = 1;
-        //
-        //               },
-        //               );
-        //             }),
-        //         RadioListTile<int>(
-        //             title: const Text('More than half the days'),
-        //             value: 2,
-        //             groupValue: selectedRadio,
-        //             onChanged: (value) {
-        //               setState(() {
-        //                 selectedRadio = 2;
-        //
-        //               },
-        //               );
-        //             }),
-        //         RadioListTile<int>(
-        //             title: const Text('Nearly everyday'),
-        //             value: 3,
-        //             groupValue: selectedRadio,
-        //             onChanged: (value) {
-        //               setState(() {
-        //                 selectedRadio = 3;
-        //
-        //               },
-        //               );
-        //             }),
+       
 
                 const SizedBox(height: 30,),
               ],

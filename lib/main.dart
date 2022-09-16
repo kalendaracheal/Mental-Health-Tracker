@@ -1,14 +1,8 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:mentalhealthtracker/page/Activities_page.dart';
-import 'package:mentalhealthtracker/page/chat_page.dart';
-import 'package:mentalhealthtracker/users.dart';
-import 'API/firebase_api.dart';
 import 'firebase_options2.dart';
 import 'package:flutter/material.dart';
-import 'package:mentalhealthtracker/page/chats_page.dart';
 //import 'package:video_player/video_player.dart';
 //import 'package:mentalhealthtracker/page/chats_page.dart';
 
@@ -23,7 +17,7 @@ Future main() async {
   );
   // final refUser = FirebaseFirestore.instance.collection('users').doc();
  // await refUser.set({'idUser': '001', 'name': 'Baraka Obama', 'urlAvatar': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/480px-President_Barack_Obama.jpg', 'lastMessageTime': DateTime.now()});
-  await FirebaseApi.addRandomUsers(Users.initUsers);
+ //  await FirebaseApi.addRandomUsers(Users.initUsers);
 
   runApp(const MyApp());
 }
@@ -65,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return  const Scaffold(
-        backgroundColor: const Color(0xFFBBDEFB),
+        backgroundColor: Color(0xFFBBDEFB),
         // appBar: AppBar(
         //
         //   title: Text(widget.title),

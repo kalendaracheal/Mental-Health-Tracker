@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 import 'package:mentalhealthtracker/page/Videos.dart';
 
@@ -306,8 +305,6 @@ class Meditate extends StatefulWidget {
 class _MeditateState extends State<Meditate> {
   @override
   Widget build(BuildContext context) {
-    var borderRadius = const BorderRadius.all(Radius.circular(12));
-    bool active = false;
     return Scaffold(
       backgroundColor: const Color(0xFFE1F5FE),
       appBar: AppBar(

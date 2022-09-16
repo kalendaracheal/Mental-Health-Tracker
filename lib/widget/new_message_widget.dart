@@ -18,7 +18,7 @@ class NewMessageWidgetState extends State<NewMessageWidget> {
   String message = '';
 
   void sendMessage() async {
-    FocusScope.of(context).unfocus();
+    //FocusScope.of(context).unfocus();
 
     await FirebaseApi.uploadMessage(widget.idUser, message);
 
@@ -45,7 +45,7 @@ class NewMessageWidgetState extends State<NewMessageWidget> {
                 borderSide: const BorderSide(width: 0),
                 gapPadding: 10,
                 borderRadius: BorderRadius.circular(25),
-              ),
+              ),   
             ),
             onChanged: (value) => setState(() {
               message = value;
