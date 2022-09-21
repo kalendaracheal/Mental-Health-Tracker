@@ -20,7 +20,7 @@ class ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
     extendBodyBehindAppBar: true,
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.blue[400],
     body: SafeArea(
       child: Column(
         children: [
@@ -29,7 +29,7 @@ class ChatPageState extends State<ChatPage> {
             child: Container(
               padding: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Color(0xFFE1F5FE),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25),
                   topRight: Radius.circular(25),

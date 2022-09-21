@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mentalhealthtracker/Model/memories_model.dart';
 import 'package:mentalhealthtracker/data.dart';
 import 'package:mentalhealthtracker/Model/message.dart';
 import 'package:mentalhealthtracker/Model/user.dart';
@@ -11,6 +12,27 @@ class FirebaseApi {
       .orderBy(UserField.lastMessageTime, descending: true)
       .snapshots()
       .transform(Utils.transformer(User.fromMap));
+
+  static Future uploadJournal(String title, String notes) async {
+    final refJournal = FirebaseFirestore.instance.collection('journal');
+
+    await refJournal.add({
+      'title': title,
+      'notes': notes,
+      'journaldate': DateTime.now()
+    });
+// // To update our other user that they have received a new message
+//     final refUsers = FirebaseFirestore.instance.collection('users');
+//     await refUsers
+//         .doc(idUser)
+//         .update({UserField.lastMessageTime: Timestamp.fromDate(DateTime.now())});
+  }
+
+  // static Stream<List<MemoriesModel>> getJournal(String title, String notes) =>
+  //     FirebaseFirestore.instance
+  //         .collection('journal')
+  //         .orderBy(MessageField.createdAt, descending: true)
+  //         .snapshots().;
 
   static Future uploadMessage(String idUser, String message) async {
     final refMessages =

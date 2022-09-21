@@ -1,10 +1,25 @@
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Model/user.dart';
 import 'package:mentalhealthtracker/page/chat_page.dart';
 import 'package:flutter/material.dart';
 
 class ChatBodyWidget extends StatelessWidget {
   final List<User> users;
+  callDoctor(){
+    const number = '+256757081140';
 
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        textStyle: GoogleFonts.balsamiqSans(fontSize: 16, color: Colors.black54),
+      ),
+      child: const Text('Call'),
+      onPressed: ()async{
+        await FlutterPhoneDirectCaller.callNumber(number);
+      },
+    );
+  }
   const ChatBodyWidget({
     required this.users,
     Key? key,
@@ -15,7 +30,7 @@ class ChatBodyWidget extends StatelessWidget {
     child: Container(
       padding: const EdgeInsets.all(10),
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color:Color(0xFFE1F5FE),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(25),
           topRight: Radius.circular(25),
@@ -43,6 +58,7 @@ class ChatBodyWidget extends StatelessWidget {
             backgroundImage: NetworkImage(user.urlAvatar),
           ),
           title: Text(user.name),
+         // trailing: callDoctor(),
         ),
       );
     },

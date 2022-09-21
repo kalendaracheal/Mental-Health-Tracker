@@ -44,6 +44,10 @@ class _WelcomeState extends State<Welcome> {
                   backgroundImage: AssetImage('/images/mht.png'),
                 ),),
               const SizedBox(height: 10.0,),
+              Text("I am MHT your virtual friend",
+                style: GoogleFonts.balsamiqSans( fontSize: 18),),
+              const SizedBox(height: 20.0,),
+
 
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -58,7 +62,7 @@ class _WelcomeState extends State<Welcome> {
                       MaterialPageRoute(builder: (context) => Home()
                     ));
                   },
-                  child: const Text("S  k  i  p")
+                  child: const Text(" W e l c o m e ")
               ),
 
             ],

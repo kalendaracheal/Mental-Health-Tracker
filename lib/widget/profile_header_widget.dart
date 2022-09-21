@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class ProfileHeaderWidget extends StatelessWidget {
   final String name;
+
+
+
+
 
   const ProfileHeaderWidget({
     required this.name,
@@ -32,7 +37,17 @@ class ProfileHeaderWidget extends StatelessWidget {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                buildIcon(Icons.call),
+                Column(
+                  children: [
+
+                    Container(
+                    )
+
+                  ],
+                ),
+                buildIcon(
+
+                    Icons.call),
                 const SizedBox(width: 12),
                 buildIcon(Icons.videocam),
               ],

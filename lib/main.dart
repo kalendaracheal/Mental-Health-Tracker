@@ -1,7 +1,7 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options2.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 //import 'package:video_player/video_player.dart';
 //import 'package:mentalhealthtracker/page/chats_page.dart';
@@ -21,7 +21,6 @@ Future main() async {
 
   runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
 

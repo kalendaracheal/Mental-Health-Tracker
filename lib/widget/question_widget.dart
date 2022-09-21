@@ -8,6 +8,7 @@ class QuestionWiget extends StatefulWidget {
   final String? questionHeader;
   final String? questionNumber;
   final String? question;
+ // final int notatall, severaldays, morethanhalfdays, nearlyeveryday;
   final void Function()? onPressed;
   final String? buttonText;
   const QuestionWiget({
@@ -16,7 +17,11 @@ class QuestionWiget extends StatefulWidget {
     this.questionNumber,
     this.question,
     this.onPressed,
-    this.buttonText
+    this.buttonText,
+    // required this.notatall,
+    // required this.morethanhalfdays,
+    // required this.nearlyeveryday,
+    // required this.severaldays
   }) : super(key: key);
 
   @override
@@ -148,10 +153,25 @@ class _QuestionWigetState extends State<QuestionWiget> {
 
 
                        
-                       ListTile(
-                        title: const Text('More than half the days'),
+
+                      ListTile(
+                        title: const Text('Not at all'),
                         leading: Radio<int>(
                           value: 0,
+                          groupValue: selectedRadio,
+                          onChanged: (int? value) {
+                            setState(() {
+                              selectedRadio = value!;
+
+                              print('$value');
+                            });
+                          },
+                        ),
+                      ),
+                      ListTile(
+                        title: const Text('Several days'),
+                        leading: Radio<int>(
+                          value: 1,
                           groupValue: selectedRadio,
                           onChanged: (int? value) {
                             setState(() {
@@ -162,7 +182,20 @@ class _QuestionWigetState extends State<QuestionWiget> {
                         ),
                       ),
                       ListTile(
-                        title: const Text('Several days'),
+                        title: const Text('More than half the days'),
+                        leading: Radio<int>(
+                          value: 2,
+                          groupValue: selectedRadio,
+                          onChanged: (int? value) {
+                            setState(() {
+                              selectedRadio = value!;
+                              print('$value');
+                            });
+                          },
+                        ),
+                      ),
+                      ListTile(
+                        title: const Text('Nearly everyday'),
                         leading: Radio<int>(
                           value: 3,
                           groupValue: selectedRadio,
@@ -174,53 +207,54 @@ class _QuestionWigetState extends State<QuestionWiget> {
                           },
                         ),
                       ),
-        RadioListTile<int>(
-                  title: const Text('Not at all'),
-                  value: 0,
-                    groupValue: selectedRadio,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedRadio = value!;
-                        print(selectedRadio);
-                      },
-                      );
-                    }),
-                RadioListTile<int>(
-                    title: const Text('Several days'),
-                    value: 1,
-                    groupValue: selectedRadio,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedRadio = value!;
-                        print(selectedRadio);
-        
-                      },
-                      );
-                    }),
-                RadioListTile<int>(
-                    title: const Text('More than half the days'),
-                    value: 2,
-                    groupValue: selectedRadio,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedRadio = value!;
-                        print(selectedRadio);
-        
-                      },
-                      );
-                    }),
-                RadioListTile<int>(
-                    title: const Text('Nearly everyday'),
-                    value: 3,
-                    groupValue: selectedRadio,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedRadio = value!;
-                        print(selectedRadio);
-        
-                      },
-                      );
-                    }),
+
+                //  RadioListTile<int>(
+                //   title: const Text('Not at all'),
+                //   value: 0,
+                //     groupValue: selectedRadio,
+                //     onChanged: (value) {
+                //       setState(() {
+                //         selectedRadio = value!;
+                //         print(selectedRadio);
+                //       },
+                //       );
+                //     }),
+                // RadioListTile<int>(
+                //     title: const Text('Several days'),
+                //     value: 1,
+                //     groupValue: selectedRadio,
+                //     onChanged: (value) {
+                //       setState(() {
+                //         selectedRadio = value!;
+                //         print(selectedRadio);
+                //
+                //       },
+                //       );
+                //     }),
+                // RadioListTile<int>(
+                //     title: const Text('More than half the days'),
+                //     value: 2,
+                //     groupValue: selectedRadio,
+                //     onChanged: (value) {
+                //       setState(() {
+                //         selectedRadio = value!;
+                //         print(selectedRadio);
+                //
+                //       },
+                //       );
+                //     }),
+                // RadioListTile<int>(
+                //     title: const Text('Nearly everyday'),
+                //     value: 3,
+                //     groupValue: selectedRadio,
+                //     onChanged: (value) {
+                //       setState(() {
+                //         selectedRadio = value!;
+                //         print(selectedRadio);
+                //
+                //       },
+                //       );
+                //     }),
                     ],
                   ),
                 ),

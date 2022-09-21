@@ -15,6 +15,7 @@ class CreatePasscode extends StatefulWidget {
 class _CreatePasscodeState extends State<CreatePasscode> {
   final passcode_controller = TextEditingController();
   final comfirmpasscode_controller = TextEditingController();
+  final bool obscureText = false;
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +67,7 @@ class _CreatePasscodeState extends State<CreatePasscode> {
                 decoration: const InputDecoration(
                   hintText: 'Confirm passcode',
                   border: OutlineInputBorder(),
+
 
                 ),
                 validator: (String? value) {

@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
-class JournalCard extends StatelessWidget {
+class JournalCard extends StatefulWidget {
   final String title;
   final String notes;
 
   const JournalCard({required this.title, required this.notes,  Key? key,}) : super(key: key);
 
+  @override
+  State<JournalCard> createState() => _JournalCardState();
+}
+
+class _JournalCardState extends State<JournalCard> {
   @override
 
   Widget build(BuildContext context) {
@@ -21,12 +26,12 @@ class JournalCard extends StatelessWidget {
         tileColor: const Color(0xFFE1F5FE),
         title:  Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text('$title ',
+          child: Text('${widget.title} ',
               style:  GoogleFonts.balsamiqSans(fontSize: 18, fontWeight: FontWeight.bold )),
         ),
         subtitle:  Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(notes,
+          child: Text(widget.notes,
             style: GoogleFonts.balsamiqSans( fontSize: 16),),
         ),
         textColor: Colors.black,
@@ -39,5 +44,4 @@ class JournalCard extends StatelessWidget {
     );
 
   }
-
 }

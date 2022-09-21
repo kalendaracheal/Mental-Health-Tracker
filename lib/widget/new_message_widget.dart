@@ -39,7 +39,7 @@ class NewMessageWidgetState extends State<NewMessageWidget> {
             enableSuggestions: true,
             decoration: InputDecoration(
               filled: true,
-              fillColor: Colors.grey[100],
+              fillColor: Colors.grey[200],
               labelText: 'Type your message',
               border: OutlineInputBorder(
                 borderSide: const BorderSide(width: 0),

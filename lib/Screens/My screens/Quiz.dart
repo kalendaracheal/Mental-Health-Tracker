@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/Questions/Question1.dart';
 
 class Quiz extends StatefulWidget {
-
-  const Quiz({Key? key}) : super(key: key);
+  const Quiz({Key? key,
+  }) : super(key: key);
 
   @override
   State<Quiz> createState() => _QuizState();

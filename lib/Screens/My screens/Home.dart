@@ -4,6 +4,7 @@ import 'package:mentalhealthtracker/Screens/My%20screens/Journal.dart';
 import 'package:mentalhealthtracker/Screens/My%20screens/Quiz.dart';
 import 'package:mentalhealthtracker/page/Selfcare.dart';
 import 'package:mentalhealthtracker/page/chats_page.dart';
+
 class Home extends StatefulWidget {
   int selectedIndex;
    Home({Key? key, this.selectedIndex = 0}) : super(key: key);
@@ -16,12 +17,12 @@ class _HomeState extends State<Home> {
 
   List<Widget> screens = [
 
-    const Quiz(),
-    const Selfcare(),
-    const Journal(),
-    ChatsPage(),
+      const Quiz(),
+     const Selfcare(),
+     const Journal(),
+    const ChatsPage(),
     //const videoplayer(),
-    Container()
+    
       //const Tools()
     // const Welcome(),
   ];
@@ -29,7 +30,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //extendBody: true,
+
         backgroundColor: const Color(0xFFE1F5FE),
 
         // body: Column(

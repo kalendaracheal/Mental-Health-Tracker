@@ -4,6 +4,7 @@ import 'package:mentalhealthtracker/Contollers/memories_controller.dart';
 import 'package:mentalhealthtracker/Model/memories_model.dart';
 import 'package:mentalhealthtracker/Screens/My%20screens/Memories.dart';
 
+import '../../API/firebase_api.dart';
 import 'Home.dart';
 
 class MyJournal extends StatefulWidget {
@@ -15,19 +16,30 @@ class MyJournal extends StatefulWidget {
 
 class _MyJournalState extends State<MyJournal> {
   final _formKey = GlobalKey<FormState>();
+
+
   @override
   Widget build(BuildContext context) {
     final TextEditingController titlecontroller = TextEditingController();
     final TextEditingController notescontroller = TextEditingController();
+
+    void sendJournal() async {
+      //FocusScope.of(context).unfocus();
+
+      await FirebaseApi.uploadJournal(titlecontroller.text.trim(), notescontroller.text.trim());
+
+      titlecontroller.clear();
+      notescontroller.clear();
+    }
     //
-    // @override
-    // void dispose()
-    // {
-    //
-    //   Titlecontroller.dispose();
-    //   Notescontroller.dispose();
-    //   super.dispose();
-    // }
+    @override
+    void dispose()
+    {
+
+      titlecontroller.dispose();
+      notescontroller.dispose();
+      super.dispose();
+    }
 
     return Scaffold(
       backgroundColor: const Color(0xFFE1F5FE),
@@ -112,14 +124,18 @@ class _MyJournalState extends State<MyJournal> {
                             icon: const Icon(Icons.arrow_back),
                           ),
                         ),
+
                         Padding(
                           padding: const EdgeInsets.only(bottom: 14.0,top: 5.0, left: 10.0),
                           child: IconButton(
                             onPressed: () {
+
                               if (_formKey.currentState!.validate()) {
                                 memoriesCntrler.addMemories(MemoriesModel(
                                     title: titlecontroller.text,
                                     notes: notescontroller.text));
+                                sendJournal();
+
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                         content: Text('Journal saved')));
