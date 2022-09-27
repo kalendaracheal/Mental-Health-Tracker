@@ -18,14 +18,14 @@ class ChatsPage extends StatelessWidget {
                   return const Center(child: CircularProgressIndicator());
                 default:
                   if (snapshot.hasError) {
-                     print(snapshot.error);
-                    return buildText('Something Went Wrong Try later');
+                    // print(snapshot.error);
+                    return buildText('Something Went Wrong Try later!');
                   }
                   else {
                     final users = snapshot.data;
 
                     if (users!.isEmpty) {
-                      return buildText('No Users Found');
+                      return buildText('No Users Found \n\n check your internet connection!');
                     } else {
                       return Column(
                         children: [

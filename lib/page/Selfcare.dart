@@ -15,6 +15,7 @@ class Selfcare extends StatefulWidget {
 }
 
 class _SelfcareState extends State<Selfcare> {
+
   var borderRadius = const BorderRadius.all(Radius.circular(12));
   bool active = false;
   @override
@@ -165,7 +166,7 @@ class _SelfcareState extends State<Selfcare> {
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
                     selectedTileColor: Colors.orange[100],
                     selected: active,
-                    trailing: const Icon(Icons.chevron_right),
+                    trailing: const Icon(Icons.play_circle_outline_outlined),
 
                     onTap: (){
                       Navigator.push(
@@ -193,7 +194,7 @@ class _SelfcareState extends State<Selfcare> {
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
                     selectedTileColor: Colors.orange[100],
                     selected: active,
-                    trailing: const Icon(Icons.chevron_right),
+                    trailing: const Icon(Icons.play_circle_outline_outlined),
 
                     onTap: (){
                       Navigator.push(
@@ -221,7 +222,7 @@ class _SelfcareState extends State<Selfcare> {
                     shape: RoundedRectangleBorder(borderRadius: borderRadius),
                     selectedTileColor: Colors.orange[100],
                     selected: active,
-                    trailing: const Icon(Icons.chevron_right),
+                    trailing: const Icon(Icons.play_circle_outline_outlined),
 
                     onTap: (){
                       Navigator.push(

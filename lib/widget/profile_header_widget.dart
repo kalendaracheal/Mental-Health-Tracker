@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProfileHeaderWidget extends StatelessWidget {
   final String name;
+  final String picture;
 
 
 
@@ -10,6 +11,7 @@ class ProfileHeaderWidget extends StatelessWidget {
 
   const ProfileHeaderWidget({
     required this.name,
+    required this.picture,
     Key? key,
   }) : super(key: key);
 
@@ -22,16 +24,25 @@ class ProfileHeaderWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            SizedBox(height: 5, width: 22),
             const BackButton(color: Colors.white),
             Expanded(
-              child: Text(
-                name,
-                style: const TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-                overflow: TextOverflow.ellipsis,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(height: 5, width: 24),
+                  CircleAvatar(
+                    radius: 24,
+                    backgroundImage: NetworkImage(picture),),
+                  SizedBox(height: 5, width: 20),
+                  Text(
+                    name,
+                    style: GoogleFonts.varelaRound(
+                        fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white,),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+
+                ],
               ),
             ),
             Row(

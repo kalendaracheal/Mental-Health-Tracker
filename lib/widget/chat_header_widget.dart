@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Model/user.dart';
 import 'package:mentalhealthtracker/page/chat_page.dart';
 import 'package:flutter/material.dart';
@@ -19,15 +20,12 @@ class ChatHeaderWidget extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.75,
-          child: const Text(
+          child: Text(
             'Professional help',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
+              style: GoogleFonts.varelaRound(
+                  fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white)),
           ),
-        ),
+
         const SizedBox(height: 12),
         SizedBox(
           height: 60,
@@ -39,14 +37,15 @@ class ChatHeaderWidget extends StatelessWidget {
               if (index == 0) {
                 return Container(
                   margin: const EdgeInsets.only(right: 12),
-                  child: const CircleAvatar(
+                  child: CircleAvatar(
                     radius: 24,
-                    child: Icon(Icons.search),
+                  // child: Image.asset('assets/images/healthicon.jpg'),
+                    backgroundImage: AssetImage('assets/images/healthicon.jpg'),//https://media.istockphoto.com/photos/symbol-icon-picture-id171291741?b=1&k=20&m=171291741&s=170667a&w=0&h=zxSzBSwQDBbXDgFBPz5KT6vuSEvOcS6F2iEXEKyiDHM=
                   ),
                 );
               } else {
                 return Container(
-                  margin: const EdgeInsets.only(right: 12),
+                  margin: const EdgeInsets.only(right: 12, bottom: 5.0),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
@@ -54,9 +53,11 @@ class ChatHeaderWidget extends StatelessWidget {
                       ));
                     },
                     child: CircleAvatar(
-                      radius: 24,
+                      radius: 26,
                       backgroundImage: NetworkImage(user.urlAvatar),
                     ),
+                    
+                    
                   ),
                 );
               }

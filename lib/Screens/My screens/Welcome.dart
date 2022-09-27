@@ -1,9 +1,10 @@
 // ignore_for_file: file_names
 
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentalhealthtracker/Screens/My%20screens/Home.dart';
+import 'package:mentalhealthtracker/Screens/My%20screens/Login.dart';
 
 class Welcome extends StatefulWidget {
 
@@ -14,7 +15,7 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
-
+  final user = FirebaseAuth.instance.currentUser!;
 
   @override
   Widget build(BuildContext context) {
@@ -35,18 +36,28 @@ class _WelcomeState extends State<Welcome> {
                     style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 26)
                 ),
               ),
+              const SizedBox(height: 10.0,),
+             // Text('Hello ' + user!.email),
               const AvatarGlow(
                 endRadius: 160, glowColor: Colors.cyan,
                 duration: Duration(milliseconds: 3000),
                 repeatPauseDuration: Duration(milliseconds: 200),
                 child: CircleAvatar(
-                  radius: 60,
+                  radius: 50,
                   backgroundImage: AssetImage('/images/mht.png'),
                 ),),
+
               const SizedBox(height: 10.0,),
               Text("I am MHT your virtual friend",
                 style: GoogleFonts.balsamiqSans( fontSize: 18),),
-              const SizedBox(height: 20.0,),
+              const SizedBox(height: 30.0,),
+              // MaterialButton(
+              //     onPressed: (){
+              //   FirebaseAuth.instance.signOut();
+              // },
+              // color: Colors.purpleAccent[100],
+              //     child: Text('Sign out')
+              // ),
 
 
               ElevatedButton(
@@ -59,10 +70,10 @@ class _WelcomeState extends State<Welcome> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()
+                      MaterialPageRoute(builder: (context) => const main_page()
                     ));
                   },
-                  child: const Text(" W e l c o m e ")
+                  child: const Icon(Icons.arrow_forward)
               ),
 
             ],

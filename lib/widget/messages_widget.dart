@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/API/firebase_api.dart';
 import 'package:mentalhealthtracker/Model/message.dart';
 import 'package:mentalhealthtracker/widget/message_widget.dart';
@@ -51,7 +52,7 @@ class MessagesWidget extends StatelessWidget {
   Widget buildText(String text) => Center(
     child: Text(
       text,
-      style: const TextStyle(fontSize: 24),
+      style: GoogleFonts.varelaRound(fontSize: 24),
     ),
   );
 }

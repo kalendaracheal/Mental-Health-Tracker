@@ -22,8 +22,15 @@ final passcode_controller = TextEditingController();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color(0xFFE1F5FE),
+
       // appBar: AppBar(
-      //   title: const Text('Journal'),
+      //   leading: const BackButton(
+      //     color: Colors.black,
+      //   ),
+      //   title: Text('                 Daily Journal',
+      //       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.black87)),
+      //   elevation: 0,
+      //   backgroundColor:  Colors.transparent,
       // ),
       body: Form(
         key: formKey,
@@ -33,14 +40,12 @@ final passcode_controller = TextEditingController();
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
+              const SizedBox(height: 10,),
                Text('Welcome Back',
                   style: GoogleFonts.varelaRound(fontSize: 16, color: Colors.grey)),
-              const SizedBox(height: 10,),
-               Text('Daily Journal',
-                  style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 20)),
 
-              const SizedBox(height: 10,),
+
+              const SizedBox(height: 20,),
               const CircleAvatar(
                 radius: 40,
                 backgroundImage: AssetImage('/images/mht.png'),
@@ -82,10 +87,10 @@ final passcode_controller = TextEditingController();
                 }
 
               },
+                color: Colors.lightBlueAccent.shade400,
               child: Text('Continue',
                   style: GoogleFonts.balsamiqSans(fontSize: 17, color: Colors.white),
               ),
-                color: Colors.lightBlueAccent.shade400,
               ),
               SizedBox(
                 height: size.height*0.02,

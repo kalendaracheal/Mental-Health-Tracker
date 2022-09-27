@@ -58,10 +58,10 @@ class _Question1State extends State<Question1> {
                   child: Column(
                     children:  [
                       const SizedBox(height: 10,),
-                      const Text('Welcome Back',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black54),),
-                      const SizedBox(height: 10,),
-                      Text('Hey Samson, How are you doing today?',
+                      // const Text('Welcome Back',
+                      //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black54),),
+                      // const SizedBox(height: 10,),
+                      Text('How are you doing today?',
                           style: GoogleFonts.balsamiqSans(fontSize: 17.0)),
                       const SizedBox(height: 10,),
                     ],

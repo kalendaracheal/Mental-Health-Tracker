@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:mentalhealthtracker/Model/memories_model.dart';
 import 'package:mentalhealthtracker/data.dart';
 import 'package:mentalhealthtracker/Model/message.dart';
 import 'package:mentalhealthtracker/Model/user.dart';
@@ -22,10 +21,10 @@ class FirebaseApi {
       'journaldate': DateTime.now()
     });
 // // To update our other user that they have received a new message
-//     final refUsers = FirebaseFirestore.instance.collection('users');
-//     await refUsers
-//         .doc(idUser)
-//         .update({UserField.lastMessageTime: Timestamp.fromDate(DateTime.now())});
+//     final refjournal = FirebaseFirestore.instance.collection('journal');
+//     await refjournal
+//         .doc()
+//         .update({'journaldate': Timestamp.fromDate(DateTime.now())});
   }
 
   // static Stream<List<MemoriesModel>> getJournal(String title, String notes) =>

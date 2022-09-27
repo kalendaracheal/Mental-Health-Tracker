@@ -24,7 +24,7 @@ class ChatPageState extends State<ChatPage> {
     body: SafeArea(
       child: Column(
         children: [
-          ProfileHeaderWidget(name: widget.user.name),
+          ProfileHeaderWidget(name: widget.user.name, picture: widget.user.urlAvatar,),
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(10),

@@ -54,10 +54,14 @@ class ChatBodyWidget extends StatelessWidget {
             ));
           },
           leading: CircleAvatar(
-            radius: 25,
+            radius: 30,
             backgroundImage: NetworkImage(user.urlAvatar),
           ),
-          title: Text(user.name),
+          title: Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: Text(user.name,
+                style: GoogleFonts.balsamiqSans(fontSize: 16)),
+          ),
          // trailing: callDoctor(),
         ),
       );

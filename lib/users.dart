@@ -70,3 +70,34 @@
 //     ),
 //   ];
 // }
+
+class UserModel {
+  String? username;
+  String? email;
+  String? phonenumber;
+  String? password;
+
+  UserModel({this.username, this.email, this.password, this.phonenumber});
+
+  // receiving data from server
+  factory UserModel.fromMap(map) {
+    return UserModel(
+
+
+      username: map['username'],
+      email: map['email'],
+      phonenumber: map['phonenumber'],
+      password: map['password'],
+    );
+  }
+
+  // sending data to our server
+  Map<String, dynamic> toMap() {
+    return {
+      'username': username,
+      'email': email,
+      'phonenumber': phonenumber,
+      'password': password,
+    };
+  }
+}

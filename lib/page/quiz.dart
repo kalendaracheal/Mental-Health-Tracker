@@ -9,7 +9,7 @@ class MyQuiz extends StatelessWidget {
   final int questionIndex;
   final Function answerQuestion;
 
-  const MyQuiz({
+  const  MyQuiz({
     Key? key,
     required this.questions,
     required this.answerQuestion,
@@ -26,7 +26,7 @@ class MyQuiz extends StatelessWidget {
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {
           return Answer(
-                  answer['text'].toString(),()=> answerQuestion(answer['score']),);
+                  answerText: answer['text'].toString(),answerTap: ()=> answerQuestion(answer['score']),);
         }).toList()
       ],
     );

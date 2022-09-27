@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentalhealthtracker/Contollers/memories_controller.dart';
-import 'package:mentalhealthtracker/Model/memories_model.dart';
 import 'package:mentalhealthtracker/Screens/My%20screens/Memories.dart';
 
 import '../../API/firebase_api.dart';
@@ -131,10 +129,10 @@ class _MyJournalState extends State<MyJournal> {
                             onPressed: () {
 
                               if (_formKey.currentState!.validate()) {
-                                memoriesCntrler.addMemories(MemoriesModel(
-                                    title: titlecontroller.text,
-                                    notes: notescontroller.text));
-                                sendJournal();
+                                // memoriesCntrler.addMemories(MemoriesModel(
+                                //     title: titlecontroller.text,
+                                //     notes: notescontroller.text));
+                                sendJournal(); //firebase upload
 
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
