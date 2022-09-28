@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>916195052113-u81o5c66bvup6rnnj0cs4g133a8dp5sb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.916195052113-u81o5c66bvup6rnnj0cs4g133a8dp5sb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCafMHJqafALgk1uqJwEWrbBB2n8uAYPjc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>916195052113</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.mentalhealthtracker</string>
+	<key>PROJECT_ID</key>
+	<string>learn-to-fly-f4fc6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>learn-to-fly-f4fc6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:916195052113:ios:10f4f0cab7b50259744670</string>
+</dict>
+</plist>

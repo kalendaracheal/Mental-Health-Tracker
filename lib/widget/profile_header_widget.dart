@@ -24,17 +24,17 @@ class ProfileHeaderWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(height: 5, width: 22),
+            const SizedBox(height: 5, width: 22),
             const BackButton(color: Colors.white),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(height: 5, width: 24),
+                  const SizedBox(height: 5, width: 24),
                   CircleAvatar(
                     radius: 24,
                     backgroundImage: NetworkImage(picture),),
-                  SizedBox(height: 5, width: 20),
+                  const SizedBox(height: 5, width: 20),
                   Text(
                     name,
                     style: GoogleFonts.varelaRound(

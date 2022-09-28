@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:mentalhealthtracker/page/Videos.dart';
+import 'package:mentalhealthtracker/page/videos.dart';
 
 
 class Videocall extends StatefulWidget {

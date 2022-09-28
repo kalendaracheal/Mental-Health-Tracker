@@ -56,6 +56,7 @@ dependencies:
   firebase_storage: ^10.3.5
   get: ^4.6.5
   firebase_auth: ^3.9.0
+  flutterfire_ui: ^0.4.3+10
 
 
 

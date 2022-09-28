@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentalhealthtracker/Screens/My%20screens/Quotes_page.dart';
+import 'package:mentalhealthtracker/Screens/My%20screens/quotes_page.dart';
 import 'package:mentalhealthtracker/page/Activities_page.dart';
 import 'package:mentalhealthtracker/page/videoplayer.dart';
 
-import '../Screens/My screens/Journal.dart';
-import '../Screens/Questions/Question1.dart';
+import '../Screens/My screens/journal.dart';
+import '../Screens/Questions/question1.dart';
 
 class Selfcare extends StatefulWidget {
   const Selfcare({Key? key}) : super(key: key);

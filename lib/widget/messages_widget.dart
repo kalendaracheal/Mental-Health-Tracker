@@ -23,7 +23,7 @@ class MessagesWidget extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         default:
           if (snapshot.hasError) {
-            print(snapshot.error);
+            // print(snapshot.error);
             return buildText('Something Went Wrong Try later');
             
           } else {

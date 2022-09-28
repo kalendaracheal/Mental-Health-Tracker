@@ -37,7 +37,7 @@ class ChatHeaderWidget extends StatelessWidget {
               if (index == 0) {
                 return Container(
                   margin: const EdgeInsets.only(right: 12),
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 24,
                   // child: Image.asset('assets/images/healthicon.jpg'),
                     backgroundImage: AssetImage('assets/images/healthicon.jpg'),//https://media.istockphoto.com/photos/symbol-icon-picture-id171291741?b=1&k=20&m=171291741&s=170667a&w=0&h=zxSzBSwQDBbXDgFBPz5KT6vuSEvOcS6F2iEXEKyiDHM=

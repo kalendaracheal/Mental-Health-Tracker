@@ -1,7 +1,7 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'Screens/My screens/Login.dart';
+import 'package:mentalhealthtracker/auth_gate.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 //import 'package:video_player/video_player.dart';
@@ -56,8 +56,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        backgroundColor: Color(0xFFBBDEFB),
-        body: main_page());
+    return  Scaffold(
+        backgroundColor: const Color(0xFFBBDEFB),
+        body: AuthGate());
   }
 }

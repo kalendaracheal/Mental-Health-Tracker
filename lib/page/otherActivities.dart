@@ -3,21 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/Activity/art.dart';
 import 'package:mentalhealthtracker/Screens/Activity/chores.dart';
 import 'package:mentalhealthtracker/Screens/Activity/cooking.dart';
-import 'package:mentalhealthtracker/Screens/Activity/exercise.dart';
-import 'package:mentalhealthtracker/Screens/Activity/gardening.dart';
 import 'package:mentalhealthtracker/Screens/Activity/massage.dart';
-import 'package:mentalhealthtracker/Screens/Activity/meditation.dart';
 import 'package:mentalhealthtracker/Screens/Activity/movie.dart';
-import 'package:mentalhealthtracker/Screens/Activity/otherActivities.dart';
-import 'package:mentalhealthtracker/Screens/Activity/read.dart';
-import 'package:mentalhealthtracker/Screens/Activity/swimming.dart';
-import 'package:mentalhealthtracker/Screens/Activity/take_a_walk.dart';
 
 import '../Screens/Activity/bath.dart';
 import '../Screens/Activity/games.dart';
 import '../Screens/Activity/have-A-Bite.dart';
 import '../Screens/Activity/music.dart';
-import '../Screens/Activity/yoga.dart';
 
 class Activities_page extends StatefulWidget {
   const Activities_page({Key? key}) : super(key: key);
@@ -37,7 +29,7 @@ class _Activities_pageState extends State<Activities_page> {
           leading: const BackButton(
             color: Colors.black,
           ),
-          title: Text('Recommended Activities',
+          title: Text('Recommended  Other Activities',
               style: GoogleFonts.varelaRound(
                   fontWeight: FontWeight.bold, fontSize: 20)),
           elevation: 0,
@@ -45,203 +37,6 @@ class _Activities_pageState extends State<Activities_page> {
         ),
         body: Center(
             child: ListView(children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Out door Activities',
-              style: GoogleFonts.varelaRound(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17,
-                  color: Colors.blueAccent),
-            ),
-          ),
-          //Take a walk
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Take a walk',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text(
-                  '''Getting outside in some fresh air is a great way to boost mood.''',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.white60,
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Take_a_walk()),
-                );
-              },
-            ),
-          ),
-          //Meditation
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Meditation',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text('Meditation help you ponder on how you feel',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Meditation()),
-                );
-              },
-            ),
-          ),
-          //Exercise
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Exercise',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text(
-                  'Exercise is good for both your physical and mental well being.',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Exercise()),
-                );
-              },
-            ),
-          ),
-          //Yoga
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Yoga',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text('Yoga is a great mindful practice',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Yoga()),
-                );
-              },
-            ),
-          ),
-          //Swimming
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Swimming',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text(
-                  '''The beach can be an underrated spot, especially when it’s not summertime. ''',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Swimming()),
-                );
-              },
-            ),
-          ),
-          //Read
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Reading in the park',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text(
-                  'Reading is a best way to shift your mind from all worries',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Read()),
-                );
-              },
-            ),
-          ),
-          //  Gardening
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Gardening',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text(
-                  'Nature is beautiful and great at renewing your mind...',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Gardening()),
-                );
-              },
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
@@ -538,7 +333,7 @@ class _Activities_pageState extends State<Activities_page> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const OtherActivities()),
+                      builder: (context) => const Activities_page()),
                 );
               },
             ),

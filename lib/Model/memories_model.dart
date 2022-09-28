@@ -34,8 +34,9 @@ class MemoriesModel extends StatelessWidget {
         'notes': notes, // Stokes and Sons
 
       })
-          .then((value) => print("Journal Added"))
-          .catchError((error) => print("Failed to add journal: $error"));
+          // .then((value) => print("Journal Added"))
+          // .catchError((error) => print("Failed to add journal: $error"))
+          ;
     }
 
     return FloatingActionButton(
