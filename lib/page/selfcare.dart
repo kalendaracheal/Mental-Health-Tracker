@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/My%20screens/quotes_page.dart';
-import 'package:mentalhealthtracker/page/Activities_page.dart';
+import 'package:mentalhealthtracker/page/activities_page.dart';
 import 'package:mentalhealthtracker/page/videoplayer.dart';
 
 import '../Screens/My screens/journal.dart';
@@ -128,7 +128,7 @@ class _SelfcareState extends State<Selfcare> {
                       radius: 40,
                       backgroundImage: AssetImage('/images/activity.jpg'),
                     ),
-                    title:  Text('Activity',
+                    title:  Text('Recommended Activities',
                       style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
                     tileColor: Colors.lightBlueAccent[100],
@@ -143,7 +143,7 @@ class _SelfcareState extends State<Selfcare> {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Activities_page()),
+                        MaterialPageRoute(builder: (context) => const Activitiespage()),
                       );
 
                     },

@@ -56,11 +56,12 @@ class ProfileHeaderWidget extends StatelessWidget {
 
                   ],
                 ),
-                buildIcon(
 
-                    Icons.call),
-                const SizedBox(width: 12),
-                buildIcon(Icons.videocam),
+                //Code for call and Video Icons
+                
+                // buildIcon(Icons.call),
+                // const SizedBox(width: 12),
+                // buildIcon(Icons.videocam),
               ],
             ),
             const SizedBox(width: 4),

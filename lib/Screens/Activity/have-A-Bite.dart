@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../page/Activities_page.dart';
+import '../../page/activities_page.dart';
 import '../../widget/activity_widget.dart';
 
-class Have_A_bite extends StatefulWidget {
-  const Have_A_bite({Key? key}) : super(key: key);
+class HaveAbite extends StatefulWidget {
+  const HaveAbite({Key? key}) : super(key: key);
 
   @override
-  State<Have_A_bite> createState() => _Have_A_biteState();
+  State<HaveAbite> createState() => _HaveAbiteState();
 }
 
-class _Have_A_biteState extends State<Have_A_bite> {
+class _HaveAbiteState extends State<HaveAbite> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +36,7 @@ class _Have_A_biteState extends State<Have_A_bite> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Activities_page()),
+              MaterialPageRoute(builder: (context) => const Activitiespage()),
             );
           },
         )));

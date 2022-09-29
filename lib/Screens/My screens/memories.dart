@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 import '../../widget/journal_Card.dart';
 import 'home.dart';
@@ -13,7 +14,10 @@ class Memories extends StatefulWidget {
 }
 
 class _MemoriesState extends State<Memories> {
-  Stream<QuerySnapshot> collectionStream = FirebaseFirestore.instance.collection('journal').orderBy('journaldate', descending: true).snapshots();
+  Stream<QuerySnapshot> collectionStream = FirebaseFirestore.instance
+      .collection('journal')
+      .orderBy('journaldate', descending: true)
+      .snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -29,22 +33,20 @@ class _MemoriesState extends State<Memories> {
           child: Column(
             children: [
               const SizedBox(
-                height: 40,
+                height: 80,
               ),
-
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Text("My Space",
-                    style: GoogleFonts.varelaRound(
-                        fontWeight: FontWeight.bold, fontSize: 26, color: Colors.white)),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(12.0),
+              //   child: Text("My Space",
+              //       style: GoogleFonts.varelaRound(
+              //           fontWeight: FontWeight.bold,
+              //           fontSize: 26,
+              //           color: Colors.white)),
+             
               StreamBuilder<QuerySnapshot>(
                 stream: collectionStream,
-                builder:
-                    (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot> snapshot) {
                   if (snapshot.hasError) {
                     return const Text('Something went wrong');
                   }
@@ -54,38 +56,59 @@ class _MemoriesState extends State<Memories> {
                   }
 
                   return Column(
-                    children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                    children:
+                        snapshot.data!.docs.map((DocumentSnapshot document) {
                       Map<String, dynamic> data =
-                      document.data()! as Map<String, dynamic>;
-                      return JournalCard(title: data['title'], notes: data['notes'], journaldate: data['journaldate'],);
+                          document.data()! as Map<String, dynamic>;
+                      final Timestamp timestamp =
+                          data['journaldate'] as Timestamp;
+                      final DateTime dateTime = timestamp.toDate();
+                      String formattedDate =
+                          DateFormat('kk:mm:ss \n EEE d MMM').format(dateTime);
 
+                      return JournalCard(
+                          title: data['title'],
+                          notes: data['notes'],
+                          journaldate: formattedDate
+                              .toString()
+                          );
                     }).toList(),
                   );
                 },
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
-              FloatingActionButton(
-                  onPressed: () {
-
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Home()),
-                      );
-                    },
-                  child: const Text(" N e x t "),
-
-    ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                },
+                child: Text(" N e x t ",
+                    style: GoogleFonts.balsamiqSans(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.black87)),
+              ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
             ],
           ),
-        )
+        ),
+             Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 160.0, vertical: 40.0),
+                child: Text("My Space",
+                    style: GoogleFonts.varelaRound(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 26,
+                        color: Colors.white)),
+              ),
+              
+
       ]),
     );
   }
-
-
 }

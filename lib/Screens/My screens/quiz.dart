@@ -82,16 +82,7 @@ class _QuizState extends State<Quiz> {
                     Text('Mental Health Tracker',
                         style: GoogleFonts.varelaRound(
                             fontWeight: FontWeight.bold, fontSize: 26)),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text(
-                      'Welcome dear',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                          color: Colors.black54),
-                    ),
+                    
                     const SizedBox(
                       height: 30,
                     ),

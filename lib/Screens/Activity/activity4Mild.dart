@@ -3,59 +3,103 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/Activity/art.dart';
 import 'package:mentalhealthtracker/Screens/Activity/chores.dart';
 import 'package:mentalhealthtracker/Screens/Activity/cooking.dart';
-import 'package:mentalhealthtracker/Screens/Activity/exercise.dart';
-import 'package:mentalhealthtracker/Screens/Activity/gardening.dart';
 import 'package:mentalhealthtracker/Screens/Activity/massage.dart';
-import 'package:mentalhealthtracker/Screens/Activity/meditation.dart';
 import 'package:mentalhealthtracker/Screens/Activity/movie.dart';
-import 'package:mentalhealthtracker/Screens/Activity/otherActivities.dart';
-import 'package:mentalhealthtracker/Screens/Activity/read.dart';
-import 'package:mentalhealthtracker/Screens/Activity/swimming.dart';
 import 'package:mentalhealthtracker/Screens/Activity/take_a_walk.dart';
 
-import '../Screens/Activity/bath.dart';
-import '../Screens/Activity/games.dart';
-import '../Screens/Activity/have-A-Bite.dart';
-import '../Screens/Activity/music.dart';
-import '../Screens/Activity/yoga.dart';
+import '../My screens/home.dart';
+import 'bath.dart';
+import 'exercise.dart';
+import 'games.dart';
+import 'gardening.dart';
+import 'have-A-Bite.dart';
+import 'meditation.dart';
+import 'music.dart';
+import 'read.dart';
+import 'swimming.dart';
+import 'yoga.dart';
 
-class Activities_page extends StatefulWidget {
-  const Activities_page({Key? key}) : super(key: key);
+class Activities4Mild extends StatefulWidget {
+  const Activities4Mild({Key? key}) : super(key: key);
 
   @override
-  State<Activities_page> createState() => _Activities_pageState();
+  State<Activities4Mild> createState() => _Activities4MildState();
 }
 
-class _Activities_pageState extends State<Activities_page> {
+class _Activities4MildState extends State<Activities4Mild> {
   var borderRadius = const BorderRadius.all(Radius.circular(12));
   bool active = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color(0xFFE3F2FD),
-        appBar: AppBar(
-          leading: const BackButton(
-            color: Colors.black,
-          ),
-          title: Text('Recommended Activities',
-              style: GoogleFonts.varelaRound(
-                  fontWeight: FontWeight.bold, fontSize: 20)),
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-        ),
+        // appBar: AppBar(
+        //   leading: const BackButton(
+        //     color: Colors.black,
+        //   ),
+        //   title: Text('Recommended Activities',
+        //       style: GoogleFonts.varelaRound(
+        //           fontWeight: FontWeight.bold, fontSize: 20)),
+        //   elevation: 0,
+        //   backgroundColor: Colors.transparent,
+        // ),
         body: Center(
             child: ListView(children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 60, right: 60, top: 40, bottom: 20),
+                child: Text('Recommended Activities',
+                style: GoogleFonts.varelaRound(
+                    fontWeight: FontWeight.bold, fontSize: 20)),
+              ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Out door Activities',
-              style: GoogleFonts.varelaRound(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17,
-                  color: Colors.blueAccent),
+            child: Column(
+              children: [
+                Text(
+                  'Since your symptoms show a mild effect, consider the following activities \n',
+                    style: GoogleFonts.balsamiqSans(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87),
+                ),
+                Text(
+                  'In case you find it difficulty to proceed with your daily activities, consider visiting a counsellor, psychiatrist or a therapist.',
+                  style: GoogleFonts.balsamiqSans(
+                      fontSize: 16,
+                      color: Colors.black87),
+                ),
+              ],
             ),
           ),
-          //Take a walk
+           // Have a bite
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+            child: ListTile(
+              title: Text(
+                'Have a bite',
+                style: GoogleFonts.varelaRound(
+                    fontWeight: FontWeight.bold, fontSize: 17),
+              ),
+              tileColor: Colors.lightBlueAccent[100],
+              subtitle: Text('Treat yourself to a nice meal',
+                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
+              contentPadding: const EdgeInsets.all(10.0),
+              shape: RoundedRectangleBorder(borderRadius: borderRadius),
+              selectedTileColor: Colors.orange[100],
+              selected: active,
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HaveAbite()),
+                );
+              },
+            ),
+          ),
+         
+          //Read
+         
           Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
@@ -77,7 +121,7 @@ class _Activities_pageState extends State<Activities_page> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Take_a_walk()),
+                  MaterialPageRoute(builder: (context) => const TakeAwalk()),
                 );
               },
             ),
@@ -104,6 +148,32 @@ class _Activities_pageState extends State<Activities_page> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const Meditation()),
+                );
+              },
+            ),
+          ),
+           Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+            child: ListTile(
+              title: Text(
+                'Reading in the park',
+                style: GoogleFonts.varelaRound(
+                    fontWeight: FontWeight.bold, fontSize: 17),
+              ),
+              tileColor: Colors.lightBlueAccent[100],
+              subtitle: Text(
+                  'Reading is a best way to shift your mind from all worries',
+                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
+              contentPadding: const EdgeInsets.all(10.0),
+              shape: RoundedRectangleBorder(borderRadius: borderRadius),
+              selectedTileColor: Colors.orange[100],
+              selected: active,
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Read()),
                 );
               },
             ),
@@ -188,33 +258,7 @@ class _Activities_pageState extends State<Activities_page> {
               },
             ),
           ),
-          //Read
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Reading in the park',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text(
-                  'Reading is a best way to shift your mind from all worries',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Read()),
-                );
-              },
-            ),
-          ),
+          
           //  Gardening
           Padding(
             padding:
@@ -242,16 +286,7 @@ class _Activities_pageState extends State<Activities_page> {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'In door Activities',
-              style: GoogleFonts.varelaRound(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17,
-                  color: Colors.lightBlueAccent),
-            ),
-          ),
+
           //Art
           Padding(
             padding:
@@ -410,32 +445,6 @@ class _Activities_pageState extends State<Activities_page> {
               },
             ),
           ),
-          // Have a bite
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Have a bite',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text('Treat yourself to a nice meal',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Have_A_bite()),
-                );
-              },
-            ),
-          ),
           //Chores
           Padding(
             padding:
@@ -515,34 +524,52 @@ class _Activities_pageState extends State<Activities_page> {
             ),
           ),
 
+          
           //Other activities
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Other',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
+          // Padding(
+          //   padding:
+          //       const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+          //   child: ListTile(
+          //     title: Text(
+          //       'Other',
+          //       style: GoogleFonts.varelaRound(
+          //           fontWeight: FontWeight.bold, fontSize: 17),
+          //     ),
+          //     tileColor: Colors.lightBlueAccent[100],
+          //     subtitle: Text(
+          //         'We have a wide range of things we can do make our day better',
+          //         style: GoogleFonts.balsamiqSans(fontSize: 16)),
+          //     contentPadding: const EdgeInsets.all(10.0),
+          //     shape: RoundedRectangleBorder(borderRadius: borderRadius),
+          //     selectedTileColor: Colors.orange[100],
+          //     selected: active,
+          //     trailing: const Icon(Icons.chevron_right),
+          //     onTap: () {
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //             builder: (context) => const Activities4Mild()),
+          //       );
+          //     },
+          //   ),
+          // ),
+
+         const SizedBox(height: 30.0,),
+          ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
+                },
+                child: Text(" N e x t ",
+                    style: GoogleFonts.balsamiqSans(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.black87)),
               ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text(
-                  'We have a wide range of things we can do make our day better',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const OtherActivities()),
-                );
-              },
-            ),
-          ),
-        ])));
+             const SizedBox(height: 30.0,),
+        ])
+        ));
   }
 }

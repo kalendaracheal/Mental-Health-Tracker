@@ -6,9 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Contollers/question_controller.dart';
-import 'package:mentalhealthtracker/Screens/Activity/otherActivities.dart';
-import 'package:mentalhealthtracker/page/Selfcare.dart';
-
+import 'package:mentalhealthtracker/Screens/Activity/activity4Mild.dart';
+import 'package:mentalhealthtracker/Screens/Activity/activity4Moderate.dart';
+import 'package:mentalhealthtracker/Screens/Activity/activity4Severe.dart';
+import 'package:mentalhealthtracker/page/activities_page.dart';
+import 'package:mentalhealthtracker/page/selfcare.dart';
 
 class Congratulations extends StatefulWidget {
   const Congratulations({Key? key}) : super(key: key);
@@ -25,7 +27,6 @@ class _CongratulationsState extends State<Congratulations> {
   void initState() {
     super.initState();
     myController.play();
-    
   }
 
   @override
@@ -92,16 +93,26 @@ class _CongratulationsState extends State<Congratulations> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const OtherActivities()),
+                              builder: (context) => const Activities4Mild()),
                         );
                       }
-                      if(contrl.counter >= 11){
+                      if (contrl.counter >= 11 && contrl.counter < 20) {
                         Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Selfcare()),
-                    );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const Activities4Moderate()),
+                        );
                       }
-                      ;
+                      if (contrl.counter >= 20) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const Activities4Severity()),
+                        );
+                      }
+                      return;
                     },
                     child: const Text("Next"));
               }),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../page/Activities_page.dart';
+import '../../page/activities_page.dart';
 import '../../widget/activity_widget.dart';
 
 class Meditation extends StatefulWidget {
@@ -35,7 +35,7 @@ class _MeditationState extends State<Meditation> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Activities_page()),
+              MaterialPageRoute(builder: (context) => const Activitiespage()),
             );
           },
         )));

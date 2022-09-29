@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentalhealthtracker/page/Activities_page.dart';
+import 'package:mentalhealthtracker/page/activities_page.dart';
 import 'package:mentalhealthtracker/widget/activity_widget.dart';
 
 
-class Take_a_walk extends StatefulWidget {
-  const Take_a_walk({Key? key}) : super(key: key);
+class TakeAwalk extends StatefulWidget {
+  const TakeAwalk({Key? key}) : super(key: key);
 
   @override
-  State<Take_a_walk> createState() => _Take_a_walkState();
+  State<TakeAwalk> createState() => _TakeAwalkState();
 }
 
-class _Take_a_walkState extends State<Take_a_walk> {
+class _TakeAwalkState extends State<TakeAwalk> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ class _Take_a_walkState extends State<Take_a_walk> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Activities_page()),
+              MaterialPageRoute(builder: (context) => const Activitiespage()),
             );
           },
         )));

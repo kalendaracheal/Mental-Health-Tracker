@@ -18,13 +18,10 @@ class FirebaseApi {
     await refJournal.add({
       'title': title,
       'notes': notes,
-      'journaldate': DateTime.now()
-    });
-// // To update our other user that they have received a new message
-//     final refjournal = FirebaseFirestore.instance.collection('journal');
-//     await refjournal
-//         .doc()
-//         .update({'journaldate': Timestamp.fromDate(DateTime.now())});
+      'journaldate': FieldValue.serverTimestamp()// DateTime.now()
+    }
+    );
+
   }
 
   // static Stream<List<MemoriesModel>> getJournal(String title, String notes) =>

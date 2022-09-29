@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/My%20screens/createPasscode.dart';
 import 'package:mentalhealthtracker/Screens/My%20screens/journal.dart';
 import 'package:mentalhealthtracker/Screens/My%20screens/quiz.dart';
-import 'package:mentalhealthtracker/page/Selfcare.dart';
+import 'package:mentalhealthtracker/page/selfcare.dart';
 import 'package:mentalhealthtracker/page/chats_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,6 +23,7 @@ class _HomeState extends State<Home> {
       const Quiz(),
      const Selfcare(),
     const PasscodeCheck(),
+    //const Memories(),
     const ChatsPage(),
 
   ];
@@ -96,6 +97,8 @@ class _PasscodeCheckState extends State<PasscodeCheck> {
   }
 
   authCheck() async {
+    try{
+
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if(prefs.getString('storedPasscode') == null){
       Navigator.push(
@@ -108,6 +111,9 @@ class _PasscodeCheckState extends State<PasscodeCheck> {
         context,
         MaterialPageRoute(builder: (context) => const  Journal()),
       );
+    }
+    }catch(e){
+      print(e);
     }
   }
   @override

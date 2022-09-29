@@ -21,7 +21,7 @@ class ListButton extends StatelessWidget {
         // tileColor: Colors.white,
         // selectedTileColor: Colors.black,
         title: Text(
-          "label",
+          "${label}",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: color,

@@ -15,7 +15,6 @@ class MyJournal extends StatefulWidget {
 class _MyJournalState extends State<MyJournal> {
   final _formKey = GlobalKey<FormState>();
 
-
   @override
   Widget build(BuildContext context) {
     final TextEditingController titlecontroller = TextEditingController();
@@ -24,7 +23,8 @@ class _MyJournalState extends State<MyJournal> {
     void sendJournal() async {
       //FocusScope.of(context).unfocus();
 
-      await FirebaseApi.uploadJournal(titlecontroller.text.trim(), notescontroller.text.trim());
+      await FirebaseApi.uploadJournal(
+          titlecontroller.text.trim(), notescontroller.text.trim());
 
       titlecontroller.clear();
       notescontroller.clear();
@@ -48,7 +48,9 @@ class _MyJournalState extends State<MyJournal> {
                   Center(
                     child: Text('My Journal',
                         style: GoogleFonts.varelaRound(
-                            fontWeight: FontWeight.bold, fontSize: 20, color: Colors.blue)),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.blue)),
                   ),
                   const SizedBox(
                     height: 20.0,
@@ -103,7 +105,8 @@ class _MyJournalState extends State<MyJournal> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 14.0,top: 5.0, right: 10.0),
+                          padding: const EdgeInsets.only(
+                              bottom: 14.0, top: 5.0, right: 10.0),
                           child: IconButton(
                             onPressed: () {
                               Navigator.push(
@@ -114,17 +117,21 @@ class _MyJournalState extends State<MyJournal> {
                             icon: const Icon(Icons.arrow_back),
                           ),
                         ),
-
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 14.0,top: 5.0, left: 10.0),
+                          padding: const EdgeInsets.only(
+                              bottom: 14.0, top: 5.0, left: 10.0),
                           child: IconButton(
                             onPressed: () {
-
                               if (_formKey.currentState!.validate()) {
                                 // memoriesCntrler.addMemories(MemoriesModel(
                                 //     title: titlecontroller.text,
                                 //     notes: notescontroller.text));
-                                sendJournal(); //firebase upload
+                                try {
+                                  sendJournal();
+                                } catch (e) {
+                                  print(e);
+                                }
+                                //firebase upload
 
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
@@ -136,7 +143,6 @@ class _MyJournalState extends State<MyJournal> {
                                       builder: (context) => Memories()),
                                 );
                               }
-                           
                             },
                             icon: const Icon(Icons.check),
                           ),
