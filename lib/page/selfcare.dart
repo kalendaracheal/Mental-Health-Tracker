@@ -64,35 +64,8 @@ class _SelfcareState extends State<Selfcare> {
                   },
                 ),
               ),
-                //Journal
-                Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: ListTile(
-                  leading: const CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage('/images/write.jpg'),
-                  ),
-                  title: Text('Journal',
-                      style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
-                ),
-                  tileColor: Colors.lightBlueAccent[100],
-                  subtitle: Text('You can jot down your thoughts on how this day has been so far',
-                      style: GoogleFonts.balsamiqSans(fontSize: 16)),
-                  contentPadding: const EdgeInsets.all(10.0),
-                  shape: RoundedRectangleBorder(borderRadius: borderRadius),
-                  selectedTileColor: Colors.orange[100],
-                  selected: active,
-                  trailing: const Icon(Icons.chevron_right),
 
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Journal()),
-                    );
-
-                  },
-                ),
-              ),
+                //Inspirational Quotes
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
@@ -121,6 +94,36 @@ class _SelfcareState extends State<Selfcare> {
                     },
                   ),
                 ),
+                //Journal
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+                  child: ListTile(
+                    leading: const CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage('/images/write.jpg'),
+                    ),
+                    title: Text('Journal',
+                      style: GoogleFonts.varelaRound(fontWeight: FontWeight.bold, fontSize: 17),
+                    ),
+                    tileColor: Colors.lightBlueAccent[100],
+                    subtitle: Text('You can jot down your thoughts on how this day has been so far',
+                        style: GoogleFonts.balsamiqSans(fontSize: 16)),
+                    contentPadding: const EdgeInsets.all(10.0),
+                    shape: RoundedRectangleBorder(borderRadius: borderRadius),
+                    selectedTileColor: Colors.orange[100],
+                    selected: active,
+                    trailing: const Icon(Icons.chevron_right),
+
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Journal()),
+                      );
+
+                    },
+                  ),
+                ),
+                //Recommended Activities
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
@@ -149,6 +152,7 @@ class _SelfcareState extends State<Selfcare> {
                     },
                   ),
                 ),
+                //Meditation Video
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
@@ -177,6 +181,7 @@ class _SelfcareState extends State<Selfcare> {
                     },
                   ),
                 ),
+                //Anxiety video
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
@@ -205,6 +210,7 @@ class _SelfcareState extends State<Selfcare> {
                     },
                   ),
                 ),
+                //Overcoming worry video
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                   child: ListTile(
@@ -233,6 +239,7 @@ class _SelfcareState extends State<Selfcare> {
                     },
                   ),
                 ),
+
 
 
 

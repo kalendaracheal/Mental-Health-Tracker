@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentalhealthtracker/Screens/My%20screens/memories.dart';
@@ -19,16 +20,27 @@ class _MyJournalState extends State<MyJournal> {
   Widget build(BuildContext context) {
     final TextEditingController titlecontroller = TextEditingController();
     final TextEditingController notescontroller = TextEditingController();
+    final DateTime journaldate = DateTime.now();
+    final Timestamp myjournaldate = Timestamp.fromDate(journaldate);//To TimeStamp
+
 
     void sendJournal() async {
       //FocusScope.of(context).unfocus();
+      try {
+        await FirebaseApi.uploadJournal(
+            titlecontroller.text.trim(), notescontroller.text.trim(), myjournaldate);
 
-      await FirebaseApi.uploadJournal(
-          titlecontroller.text.trim(), notescontroller.text.trim());
 
-      titlecontroller.clear();
-      notescontroller.clear();
+        titlecontroller.clear();
+        notescontroller.clear();
+      }  on Exception catch (e) {
+        print(e);
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text(' Loading wait a moment')));
+      }
     }
+
     //
 
     return Scaffold(
@@ -128,20 +140,21 @@ class _MyJournalState extends State<MyJournal> {
                                 //     notes: notescontroller.text));
                                 try {
                                   sendJournal();
-                                } catch (e) {
+
+                                  //firebase upload
+
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                          content: Text('Journal saved')));
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        // ignore: prefer_const_constructors
+                                        builder: (context) => Memories()),
+                                  );
+                                } on Exception catch (e) {
                                   print(e);
                                 }
-                                //firebase upload
-
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                        content: Text('Journal saved')));
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      // ignore: prefer_const_constructors
-                                      builder: (context) => Memories()),
-                                );
                               }
                             },
                             icon: const Icon(Icons.check),

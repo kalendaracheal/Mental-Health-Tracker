@@ -27,7 +27,7 @@ class AuthGate extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
                   action == AuthAction.signIn
-                      ? 'Welcome to the Mental Health Tracker! \n\n Please sign in to continue.'
+                      ? 'Welcome to Mental Health Tracker! \n\n Please sign in to continue.'
                       : 'Welcome to Mental Health Tracker! \n\n Please create an account to continue',
                       style: GoogleFonts.balsamiqSans( fontSize: 16,),
                 ),

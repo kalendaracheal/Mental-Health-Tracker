@@ -12,13 +12,13 @@ class FirebaseApi {
       .snapshots()
       .transform(Utils.transformer(User.fromMap));
 
-  static Future uploadJournal(String title, String notes) async {
+  static Future uploadJournal(String title, String notes,Timestamp journaldate) async {
     final refJournal = FirebaseFirestore.instance.collection('journal');
 
     await refJournal.add({
       'title': title,
       'notes': notes,
-      'journaldate': FieldValue.serverTimestamp()// DateTime.now()
+      'journaldate': DateTime.now()//FieldValue.serverTimestamp()
     }
     );
 

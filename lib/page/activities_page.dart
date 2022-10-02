@@ -44,6 +44,15 @@ class _ActivitiespageState extends State<Activitiespage> {
         ),
         body: Center(
             child: ListView(children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  'You can check out these activities and see how they are useful for your mental health',
+                  style: GoogleFonts.balsamiqSans(
+                      fontSize: 16,
+                      color: Colors.black87),
+                ),
+              ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
@@ -515,33 +524,34 @@ class _ActivitiespageState extends State<Activitiespage> {
           ),
 
           //Other activities
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-            child: ListTile(
-              title: Text(
-                'Other',
-                style: GoogleFonts.varelaRound(
-                    fontWeight: FontWeight.bold, fontSize: 17),
-              ),
-              tileColor: Colors.lightBlueAccent[100],
-              subtitle: Text(
-                  'We have a wide range of things we can do make our day better',
-                  style: GoogleFonts.balsamiqSans(fontSize: 16)),
-              contentPadding: const EdgeInsets.all(10.0),
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              selectedTileColor: Colors.orange[100],
-              selected: active,
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const Activitiespage()),
-                );
-              },
-            ),
-          ),
+          // Padding(
+          //   padding:
+          //       const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+          //   child: ListTile(
+          //     title: Text(
+          //       'Other',
+          //       style: GoogleFonts.varelaRound(
+          //           fontWeight: FontWeight.bold, fontSize: 17),
+          //     ),
+          //     tileColor: Colors.lightBlueAccent[100],
+          //     subtitle: Text(
+          //         'We have a wide range of things we can do make our day better',
+          //         style: GoogleFonts.balsamiqSans(fontSize: 16)),
+          //     contentPadding: const EdgeInsets.all(10.0),
+          //     shape: RoundedRectangleBorder(borderRadius: borderRadius),
+          //     selectedTileColor: Colors.orange[100],
+          //     selected: active,
+          //     trailing: const Icon(Icons.chevron_right),
+          //     onTap: () {
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //             builder: (context) => const Activitiespage()),
+          //       );
+          //     },
+          //   ),
+          // ),
+              SizedBox(height: 20.0),
         ])));
   }
 }

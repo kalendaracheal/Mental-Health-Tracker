@@ -11,7 +11,7 @@ import 'package:mentalhealthtracker/Screens/My%20screens/quotes.dart';
 
 import 'package:http/http.dart' as http;
 
-import 'constant.dart';
+import '../../constant.dart';
 
 
 class Quotes_page extends StatefulWidget {
